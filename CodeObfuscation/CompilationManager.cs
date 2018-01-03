@@ -15,6 +15,34 @@ namespace CodeObfuscation
     class CompilationManager
     {
         public CompilationManager() { }
+
+        public void parseCompilationWithProvidedPriorities(Priority.En_Priority[] prioritiesTablo) 
+        {
+            Tuple<Compilation, int> compilationTuple = CreateCompilation();
+
+            for (int i = 0; i < compilationTuple.Item2; i++)
+            {
+                foreach (SyntaxTree sourceTree in compilationTuple.Item1.SyntaxTrees)
+                {
+                    ClassRewriter classRewriter = new ClassRewriter();
+                    SyntaxNode classRewritedNode = classRewriter.Visit(sourceTree.GetRoot());
+                    ConstructorRewriter constructorRewriter = new ConstructorRewriter();
+                    SyntaxNode constructorRewritedNode = constructorRewriter.Visit(classRewritedNode);
+                    MethodRewriter methodRewriter = new MethodRewriter();
+                    SyntaxNode methodRewritedNode = methodRewriter.Visit(constructorRewritedNode);
+                    VariableRewriter variableRewriter = new VariableRewriter();
+                    SyntaxNode variableRewritedNode = variableRewriter.Visit(methodRewritedNode);
+                    OccurrenceRewriter occurrenceRewriter = new OccurrenceRewriter();
+                    SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(variableRewritedNode);
+                    /*if (occurenceRewritedNode != sourceTree.GetRoot())
+                    {
+                        File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
+                    }*/
+                    //save without condition
+                    File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
+                }
+            }
+        }
         public Tuple<Compilation, int> CreateCompilation()
         {
 
@@ -73,7 +101,15 @@ namespace CodeObfuscation
             SyntaxTree variableRewriterTree =
                            CSharpSyntaxTree.ParseText(variableRewriterText)
                                            .WithFilePath(variableRewriterDestinationPath);
-            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree};
+
+            String priorityPath = @"..\..\Priority.cs";
+            String priorityDestinationPath = @"..\..\PriorityOBF.cs";
+            String priorityText = File.ReadAllText(priorityPath);
+            SyntaxTree priorityTree =
+                           CSharpSyntaxTree.ParseText(priorityText)
+                                           .WithFilePath(priorityDestinationPath);
+
+            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree, priorityTree};
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);

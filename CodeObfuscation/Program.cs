@@ -16,7 +16,9 @@ namespace CodeObfuscation
         static void Main(string[] args)
         {
             CompilationManager compilationManager = new CompilationManager();
-            Tuple<Compilation, int> compilationTuple = compilationManager.CreateCompilation();
+            //Priority.En_Priority[] priorityTable = { Priority.En_Priority.CLASS, Priority.En_Priority.CONSTRUCTOR, Priority.En_Priority.METHOD, Priority.En_Priority.VARIABLE, Priority.En_Priority.OCCURENCE };
+
+           Tuple<Compilation, int> compilationTuple = compilationManager.CreateCompilation();
 
             for(int i = 0; i < compilationTuple.Item2; i++)
             {
