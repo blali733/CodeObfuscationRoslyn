@@ -15,7 +15,7 @@ namespace CodeObfuscation
     class CompilationManager
     {
         public CompilationManager() { }
-        public Compilation CreateCompilation()
+        public Tuple<Compilation, int> CreateCompilation()
         {
 
             String programPath = @"..\..\Program.cs";
@@ -73,7 +73,7 @@ namespace CodeObfuscation
             SyntaxTree variableRewriterTree =
                            CSharpSyntaxTree.ParseText(variableRewriterText)
                                            .WithFilePath(variableRewriterDestinationPath);
-            SyntaxTree[] sourceTrees = { programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree };
+            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree};
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
@@ -83,11 +83,11 @@ namespace CodeObfuscation
                    MetadataReference.CreateFromFile(typeof(CSharpSyntaxTree).Assembly.Location);
             MetadataReference[] references = { mscorlib, codeAnalysis, csharpCodeAnalysis };
 
-            return CSharpCompilation.Create("CodeObfuscation",
+            return Tuple.Create(CSharpCompilation.Create("CodeObfuscation",
                                             sourceTrees,
                                             references,
                                             new CSharpCompilationOptions(
-                                                    OutputKind.ConsoleApplication));
+                                                    OutputKind.ConsoleApplication)) as Compilation, sourceTrees.Count());
         }
     }
 }

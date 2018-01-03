@@ -11,31 +11,35 @@ using System.IO;
 
 namespace CodeObfuscation
 {
-    class IIBUH    {
+    class FBOPG    {
         static void Main(string[] args)
         {
-            CompilationManager VPVSBO= new CompilationManager();
-            Compilation QFIHALF= VPVSBO.CreateCompilation();
+            MXHEJIISXODEPXRWVSA QXUXOG= new MXHEJIISXODEPXRWVSA();
+            Tuple<Compilation, int> WRCLAFS= QXUXOG.WJJRCUPKEFLFOSEAQRMK();
 
-            foreach (SyntaxTree sourceTree in QFIHALF.SyntaxTrees)
+            for(int XOHPFUEI= 0; XOHPFUEI < WRCLAFS.Item2; XOHPFUEI++)
             {
-                ClassRewriter KMXVIHHX= new ClassRewriter();
-                SyntaxNode TVTMGKNDX= KMXVIHHX.Visit(sourceTree.GetRoot());
-                ConstructorRewriter NTFLDXSPQV= new ConstructorRewriter();
-                SyntaxNode XAKNOTPTAIK= NTFLDXSPQV.Visit(TVTMGKNDX);
-                MethodRewriter ASMHCRBGTDCB= new MethodRewriter();
-                SyntaxNode ISEFSGNFFPJHX= ASMHCRBGTDCB.Visit(XAKNOTPTAIK);
-                VariableRewriter JIFROPMTMNBQDB= new VariableRewriter();
-                SyntaxNode FRJVSVWBSJNVMKD= JIFROPMTMNBQDB.Visit(ISEFSGNFFPJHX);
-                OccurrenceRewriter FIIFIRJTNELOGUEC= new OccurrenceRewriter();
-                SyntaxNode NOFIMTSPKAHNTDRDB= FIIFIRJTNELOGUEC.Visit(FRJVSVWBSJNVMKD);
-                /*if (occurenceRewritedNode != sourceTree.GetRoot())
+                foreach (SyntaxTree sourceTree in WRCLAFS.Item1.SyntaxTrees)
                 {
-                    File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
-                }*/
-                //save without condition
-                File.WriteAllText(sourceTree.FilePath, NOFIMTSPKAHNTDRDB.ToFullString());
+                    TGORVOQUFOGUAEAOLRPDDRNDFCFAGJLIVQKROMJIIJLSJOCGMNCXLBECRKMTJPNTCVXHRGXXHHT LVIKXBFMM= new TGORVOQUFOGUAEAOLRPDDRNDFCFAGJLIVQKROMJIIJLSJOCGMNCXLBECRKMTJPNTCVXHRGXXHHT();
+                    SyntaxNode SIRJXQDFMM= LVIKXBFMM.Visit(sourceTree.GetRoot());
+                    ACAKMXDWSEXSDOFTIVOBURJTHMSUFHTWWMUMCVLFFHIWUXKKGFDFEJRHQECXEGRKJATOSRRLKITMI DHQEQMVENXN= new ACAKMXDWSEXSDOFTIVOBURJTHMSUFHTWWMUMCVLFFHIWUXKKGFDFEJRHQECXEGRKJATOSRRLKITMI();
+                    SyntaxNode USKWECMMOFRE= DHQEQMVENXN.Visit(SIRJXQDFMM);
+                    AIKJKJLLBUSQWNLKMFOMKCXBCPRGTCCCDSEUSHFOUOFCIVPPRNWTHEXVIIGSPEPXRPMDIP NRQMJAVEKQIBA= new AIKJKJLLBUSQWNLKMFOMKCXBCPRGTCCCDSEUSHFOUOFCIVPPRNWTHEXVIIGSPEPXRPMDIP();
+                    SyntaxNode TQQWBUQMXWNGKT= NRQMJAVEKQIBA.Visit(USKWECMMOFRE);
+                    LXIBIOXENRMTMTVSLBWOWMTDTPMLPTUNFXEESVUQRFTHHTGVTRWGVVJWEEFRBMMSVXONOQXOFGUQRM OOQVGJCCKXXLEPT= new LXIBIOXENRMTMTVSLBWOWMTDTPMLPTUNFXEESVUQRFTHHTGVTRWGVVJWEEFRBMMSVXONOQXOFGUQRM();
+                    SyntaxNode DDKJVIJUONJAPOTC= OOQVGJCCKXXLEPT.Visit(TQQWBUQMXWNGKT);
+                    XMPOLRHNKIOSPKIMWXJPPDRLRIEPSHJPGDCFGDJAAKHXNNJXVBGAIKUTSDUCMPSDW GXFHORTBPWRGQWNQB= new XMPOLRHNKIOSPKIMWXJPPDRLRIEPSHJPGDCFGDJAAKHXNNJXVBGAIKUTSDUCMPSDW();
+                    SyntaxNode RTSDUNLERCIVJKMPVR= GXFHORTBPWRGQWNQB.Visit(DDKJVIJUONJAPOTC);
+                    /*if (occurenceRewritedNode != sourceTree.GetRoot())
+                    {
+                        File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
+                    }*/
+                    //save without condition
+                    File.WriteAllText(sourceTree.FilePath, RTSDUNLERCIVJKMPVR.ToFullString());
+                }
             }
+
         }
     }
 }
