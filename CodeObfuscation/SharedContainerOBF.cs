@@ -6,33 +6,33 @@ using System.Threading.Tasks;
 
 namespace CodeObfuscation
 {
-    class BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL    {
-        private static readonly BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL RAJCAFNXOOHXRVSCGBOTMPGQXJCNPIIGPNJLWENATJLONGSIJKHRUGTCSQDPDA= new BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL();
-        private Random IGGBIEMGDBLOXCDPCQORDEAOJIRGRFBWVSAFIMWOTDGFGGGQWCNKAJVDFPPXKGM= new Random();
-        public Dictionary<string, string> VANRFCWHOSAVXWTICCBHPQOVLVUXQUXDNPIFQNBOASWQAMVFKHMVJWUFJQFHFWPR= new Dictionary<string, string>();
-        public Dictionary<string, JLMSVBBREMWJRJPOCWVUUDBMDIJOWSUWQIEMAEQDUXETQXWDOXVCAHWGJAOMPLSKPXRIECNVFSXUWFTDKFAWURVJJWDAN.En_Priority> TUHINNPNAKHURWVXAPNIIBSPSDTAHSJBDEVDENQUPXUWPXMLTGGOJGJRCQOKSPFGB= new Dictionary<string, JLMSVBBREMWJRJPOCWVUUDBMDIJOWSUWQIEMAEQDUXETQXWDOXVCAHWGJAOMPLSKPXRIECNVFSXUWFTDKFAWURVJJWDAN.En_Priority>();
-        private BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL() { }
-        public static BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL Instance
+    class KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET    {
+        private static readonly KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET pocUpdvRryXkhKovJScwvTgqbArhsxqkzOlSGgpbPJQNiQQFBgFLRoeOxVXpIG= new KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET();
+        private Random ooEibqSOhUsnJfCwlupVfbgNqKftqsPmgJraIASlffnswSXhLTtlmfSazjHffhh= new Random();
+        public Dictionary<string, string> EFsKAKSQlMkamnDfFfnREGWAAjljSliFbnxyjIWylDdyHDTdjCCmgWsboaJKRrnm= new Dictionary<string, string>();
+        public Dictionary<string, GKqFtTINKPrntpRJhRBwOSCQbQLMRRdRvsdBlyTtvNMAgPeMDGwLmlpfHIILHcvztJClvQRJnWyAGCtojnIKlwSDBnzaVI.En_Priority> iddBEXbvOSqBTzlbUGAPhiQwMvvFnMLPEfnVQRoQFFsUnathlMhLrpJAULhHrknCH= new Dictionary<string, GKqFtTINKPrntpRJhRBwOSCQbQLMRRdRvsdBlyTtvNMAgPeMDGwLmlpfHIILHcvztJClvQRJnWyAGCtojnIKlwSDBnzaVI.En_Priority>();
+        private KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET() { }
+        public static KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET Instance
         {
             get
             {
-                return RAJCAFNXOOHXRVSCGBOTMPGQXJCNPIIGPNJLWENATJLONGSIJKHRUGTCSQDPDA;
+                return pocUpdvRryXkhKovJScwvTgqbArhsxqkzOlSGgpbPJQNiQQFBgFLRoeOxVXpIG;
             }
         }
 
-        public string WEJHFELMWHVOGEORBPOAHJOPUDVRMNEVIREXDRQUCMHHNFIJCFVFLGEMOSLBH(int length)
+        public string apOlcbbNqwhuUgdptzrfanSayfXNuyEGxqVJEFBgeBCIQpMrzlFHGQasPyNIX(int length)
         {
-            /*const*/ var FRMARTLWRQJEUXSOHFBLTQVTDBLWGCAROUJGXKBLTPQNAMFRTTKKESGMTRUPHMQPQP= "ABCDEFGHIJKLMNOPQRSTUVWX";
-            var NXNLPUDNPDAISPTSCLPOMTOVLGOJDHXBVIWFDIEOGODDMLXFUNJEXBDSJQAJGRKIDXK= new string(Enumerable.Repeat(FRMARTLWRQJEUXSOHFBLTQVTDBLWGCAROUJGXKBLTPQNAMFRTTKKESGMTRUPHMQPQP, length + 4)
-              .Select(s => s[IGGBIEMGDBLOXCDPCQORDEAOJIRGRFBWVSAFIMWOTDGFGGGQWCNKAJVDFPPXKGM.Next(s.Length)]).ToArray());
-            foreach(string value in VANRFCWHOSAVXWTICCBHPQOVLVUXQUXDNPIFQNBOASWQAMVFKHMVJWUFJQFHFWPR.Values)
+            const string JvoxVuDXpJavvetSGNdXmfVrnAFtqhOHoMgfccUisfzXwDqaKhUtLyHVqFvUqqmxce= "ABCDEFGHIJKLMNOPQRSTUVWXqwertyuiopasdfghjklzxcvbnm";
+            var NpgjWLlEfLznBxeVSsSsvDEQNjmAGLgmrmjkvTQIsGlvreDBxDGOwJuJtVroMlneXxU= new string(Enumerable.Repeat(JvoxVuDXpJavvetSGNdXmfVrnAFtqhOHoMgfccUisfzXwDqaKhUtLyHVqFvUqqmxce, length + 4)
+              .Select(s => s[ooEibqSOhUsnJfCwlupVfbgNqKftqsPmgJraIASlffnswSXhLTtlmfSazjHffhh.Next(s.Length)]).ToArray());
+            foreach(string value in EFsKAKSQlMkamnDfFfnREGWAAjljSliFbnxyjIWylDdyHDTdjCCmgWsboaJKRrnm.Values)
             {
-                if (value.Equals(NXNLPUDNPDAISPTSCLPOMTOVLGOJDHXBVIWFDIEOGODDMLXFUNJEXBDSJQAJGRKIDXK))
+                if (value.Equals(NpgjWLlEfLznBxeVSsSsvDEQNjmAGLgmrmjkvTQIsGlvreDBxDGOwJuJtVroMlneXxU))
                 {
-                    return WEJHFELMWHVOGEORBPOAHJOPUDVRMNEVIREXDRQUCMHHNFIJCFVFLGEMOSLBH(length);
+                    return apOlcbbNqwhuUgdptzrfanSayfXNuyEGxqVJEFBgeBCIQpMrzlFHGQasPyNIX(length);
                 }
             }
-            return NXNLPUDNPDAISPTSCLPOMTOVLGOJDHXBVIWFDIEOGODDMLXFUNJEXBDSJQAJGRKIDXK;
+            return NpgjWLlEfLznBxeVSsSsvDEQNjmAGLgmrmjkvTQIsGlvreDBxDGOwJuJtVroMlneXxU;
         }
     }
 }

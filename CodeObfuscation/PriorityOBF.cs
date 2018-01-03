@@ -8,28 +8,28 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace CodeObfuscation
 {
-    class JLMSVBBREMWJRJPOCWVUUDBMDIJOWSUWQIEMAEQDUXETQXWDOXVCAHWGJAOMPLSKPXRIECNVFSXUWFTDKFAWURVJJWDAN    {
+    class GKqFtTINKPrntpRJhRBwOSCQbQLMRRdRvsdBlyTtvNMAgPeMDGwLmlpfHIILHcvztJClvQRJnWyAGCtojnIKlwSDBnzaVI    {
         public enum En_Priority: int
         {
             TYPE_INFERENCE = 0, CLASS, CONSTRUCTOR, METHOD, VARIABLE, OCCURENCE, NOT_DEFINED
         }
 
-        public static CSharpSyntaxRewriter ELJESERGNWLKAVGHCIDFLBKKUNVBHWGXNHBHNPDBBVVGMMUUPBHOXSCCBXIFGPWOQMUQUXSKECDNEDWHQBKGPQXSEWGOHV(En_Priority priority, SemanticModel model)
+        public static CSharpSyntaxRewriter UARSVtNaPdhPNeMouFywVIfsBDknjbWpghBypgumTGoVVeLkjSSgEcdMNoQSfOzROFrXqpmlwuGPwPNwkmHVyaylChQBWLL(En_Priority priority, SemanticModel model)
         {
             switch (priority)
             {
                 case En_Priority.TYPE_INFERENCE:
-                    return new KNBFEACQQPXHXULXPSNCEOATUHDGTLJKNOQEFWBMVQTAGFMPPUPWHSAUNFIUVUVEGMSJEHSQRAFMTXMOTMOXU(model);
+                    return new SjzgtqiyBHIETjjiGASLHmrxUSUKkjWFKicpdvNkDtcqQuXCyBghwwFSMmSKDVfKaCzfxGxJdeHyEDthxSuhC(model);
                 case En_Priority.CLASS:
-                    return new IOOIKORULIDQXRFOUGCMBTMTETJXGBTHTHQCNONNFSKWBOHXHTOJWBKMBTDOERNJNUUQBCBGQNGGJOROL();
+                    return new AvKMqUVhROnIuKpaBeUUHpDuOjfDEOxeoLMdTeKrpSWwoaNvCMLdDFVQzunapRsCUWwSbbPqPldhLtbue();
                 case En_Priority.CONSTRUCTOR:
-                    return new XBTGNQGHOIUIMDBVMRUVQJAGXTFXJIIMTUXPFHCFOFSRFVFLSEOQQALOBNHRKGWGAHMPDKPFOOHKOGABOSF();
+                    return new mwOkxvwnWmoXfkULwSsUxVRTueKPblXwHnIowdMOzFeghSWTvawCFKSrIcLRsKAyeGQgogshGUehxtyLEkT();
                 case En_Priority.METHOD:
-                    return new CLOATBJINTBFRDTAMTQGHOKBKKAOBBADHBNIKRQMSBDAXOCGURIVDSALBMOJBTHMSVWPOKOTDDMG();
+                    return new xSqjLrRewsqPOQBoIOnQamzlXkzbSMLqdDgTGfpmSNRgOIcxBzMmJSvcqoQTaUHNqmtKrieUimnU();
                 case En_Priority.VARIABLE:
-                    return new ESQUTIJOPXJTHHMRWJNHIMIBBRAXSMFCPBRMHKRHRTAFFTADCNBQBKUQJPSCHKTDSGDFNXJLPGNMMDTGQVUF();
+                    return new MQVUvuuquqxypEbMoCadHndcspypyPmNzjgMEdUIBOFPMkzavPvJUELOuwaMAbxOquslQsIviwazzUpxjxdN();
                 case En_Priority.OCCURENCE:
-                    return new JQNPSHAHVQLIXGINNVSBTFEUKHSHMESXMANNGWOVWRFBWIBCWEUKJWOELRELMRSRVMTW();
+                    return new CEswnSKAhLIhdfbGDEXXSSuMwkpvzIPXpFAbItIcPIknUojcOdxVmVCaXWAGaNHucsFi();
                 
             }
 

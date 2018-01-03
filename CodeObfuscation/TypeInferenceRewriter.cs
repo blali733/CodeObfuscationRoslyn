@@ -13,6 +13,7 @@ namespace CodeObfuscation
     public class TypeInferenceRewriter : CSharpSyntaxRewriter
     {
         private string kTypeInference = "var";
+        private string kExclusionModifier = "const";
         private readonly SemanticModel SemanticModel;
 
         public TypeInferenceRewriter(SemanticModel semanticModel)
@@ -30,6 +31,17 @@ namespace CodeObfuscation
            if (node.Declaration.Variables[0].Initializer == null)
             {
                 return node;
+            }
+            if (node.Modifiers.Count() > 0)
+            {
+                
+                foreach(SyntaxToken token in node.Modifiers)
+                {
+                    if (token.ValueText.Equals(kExclusionModifier))
+                    {
+                        return node;
+                    }
+                }
             }
 
             VariableDeclaratorSyntax declarator = node.Declaration.Variables.First();

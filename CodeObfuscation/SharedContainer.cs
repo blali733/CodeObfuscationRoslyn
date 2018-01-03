@@ -23,7 +23,7 @@ namespace CodeObfuscation
 
         public string RandomString(int length)
         {
-            /*const*/ string chars = "ABCDEFGHIJKLMNOPQRSTUVWX";
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXqwertyuiopasdfghjklzxcvbnm";
             string randomString = new string(Enumerable.Repeat(chars, length + 4)
               .Select(s => s[random.Next(s.Length)]).ToArray());
             foreach(string value in nameMap.Values)

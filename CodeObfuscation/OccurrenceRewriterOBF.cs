@@ -10,24 +10,24 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeObfuscation
 {
-    class JQNPSHAHVQLIXGINNVSBTFEUKHSHMESXMANNGWOVWRFBWIBCWEUKJWOELRELMRSRVMTW: CSharpSyntaxRewriter
+    class CEswnSKAhLIhdfbGDEXXSSuMwkpvzIPXpFAbItIcPIknUojcOdxVmVCaXWAGaNHucsFi: CSharpSyntaxRewriter
     {
-        public JQNPSHAHVQLIXGINNVSBTFEUKHSHMESXMANNGWOVWRFBWIBCWEUKJWOELRELMRSRVMTW() { }
+        public CEswnSKAhLIhdfbGDEXXSSuMwkpvzIPXpFAbItIcPIknUojcOdxVmVCaXWAGaNHucsFi() { }
         public override SyntaxNode Visit(SyntaxNode node)
         {
             if (node != null)
             {
-                var RSHPGUCCXDWCGQJIIINOJJBMRDJFWMDKMCIDUEDMUMEITCFTIKJNWFNHQSVDLUDLXLNEH= node.DescendantTokens();
+                var fAbqvtHJrollBgiHNxqLDPqdtBLBBKCaeJIOgUwUNzHjuHFcoAQBLxtVwKcxRGHQuHQku= node.DescendantTokens();
                 if (node is FieldDeclarationSyntax)
                 {
-                    var FMDEBSVFRRPVOVMDNMHMBKCHXBXIQIHMALCVFJUKPCWAGFUXOHKXGPGTJTEATMMJKCUCTO= (FieldDeclarationSyntax)node;
-                    if (FMDEBSVFRRPVOVMDNMHMBKCHXBXIQIHMALCVFJUKPCWAGFUXOHKXGPGTJTEATMMJKCUCTO.Declaration.Type is IdentifierNameSyntax)
+                    var QSzSDbKIpGVvPTBxAXiifhrquDHsjKWjNPQoXoHvRMlEqnCdGVyaaKzrjSfmjwSXpiomCS= (FieldDeclarationSyntax)node;
+                    if (QSzSDbKIpGVvPTBxAXiifhrquDHsjKWjNPQoXoHvRMlEqnCdGVyaaKzrjSfmjwSXpiomCS.Declaration.Type is IdentifierNameSyntax)
                     {
-                        var VEPUUXLBAREASIWHGJFHLKEUPDNNODJSEAKFIJSHHISKTTSDLCULVLCLXSFRJWLVIKTRWQX= (IdentifierNameSyntax)FMDEBSVFRRPVOVMDNMHMBKCHXBXIQIHMALCVFJUKPCWAGFUXOHKXGPGTJTEATMMJKCUCTO.Declaration.Type;
-                        var UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE= VEPUUXLBAREASIWHGJFHLKEUPDNNODJSEAKFIJSHHISKTTSDLCULVLCLXSFRJWLVIKTRWQX.Identifier.ValueText;
-                        if (BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL.Instance.TUHINNPNAKHURWVXAPNIIBSPSDTAHSJBDEVDENQUPXUWPXMLTGGOJGJRCQOKSPFGB.ContainsKey(UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE))
+                        var URPsNqvXAoBUtSugFDVgkExIFlxSUzPCafALSmvSuRSFbTvmzcwytNrQWHyUutCGQmdjRST= (IdentifierNameSyntax)QSzSDbKIpGVvPTBxAXiifhrquDHsjKWjNPQoXoHvRMlEqnCdGVyaaKzrjSfmjwSXpiomCS.Declaration.Type;
+                        var GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO= URPsNqvXAoBUtSugFDVgkExIFlxSUzPCafALSmvSuRSFbTvmzcwytNrQWHyUutCGQmdjRST.Identifier.ValueText;
+                        if (KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET.Instance.iddBEXbvOSqBTzlbUGAPhiQwMvvFnMLPEfnVQRoQFFsUnathlMhLrpJAULhHrknCH.ContainsKey(GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO))
                         {
-                            if (!BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL.Instance.TUHINNPNAKHURWVXAPNIIBSPSDTAHSJBDEVDENQUPXUWPXMLTGGOJGJRCQOKSPFGB[UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE].Equals(JLMSVBBREMWJRJPOCWVUUDBMDIJOWSUWQIEMAEQDUXETQXWDOXVCAHWGJAOMPLSKPXRIECNVFSXUWFTDKFAWURVJJWDAN.En_Priority.CLASS))
+                            if (!KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET.Instance.iddBEXbvOSqBTzlbUGAPhiQwMvvFnMLPEfnVQRoQFFsUnathlMhLrpJAULhHrknCH[GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO].Equals(GKqFtTINKPrntpRJhRBwOSCQbQLMRRdRvsdBlyTtvNMAgPeMDGwLmlpfHIILHcvztJClvQRJnWyAGCtojnIKlwSDBnzaVI.En_Priority.CLASS))
                             {
                                 return node;
                             }
@@ -37,14 +37,14 @@ namespace CodeObfuscation
 
                 if (node is ParameterSyntax)
                 {
-                    var WDXTTRWLVHOTTDFIRHFXVRCNCLWSOPGJQXWULOVUCDIKCTBFXWOATVHEAKQHSDUGBEDUFJUCJ= (ParameterSyntax)node;
-                    if (WDXTTRWLVHOTTDFIRHFXVRCNCLWSOPGJQXWULOVUCDIKCTBFXWOATVHEAKQHSDUGBEDUFJUCJ.Type is IdentifierNameSyntax)
+                    var IEFPeBCmfXJXQwncRplKAlGpphaWCtjQeCVyXzJyMFWAkhfOPEuOUgOPbWifQubIolvNETWqX= (ParameterSyntax)node;
+                    if (IEFPeBCmfXJXQwncRplKAlGpphaWCtjQeCVyXzJyMFWAkhfOPEuOUgOPbWifQubIolvNETWqX.Type is IdentifierNameSyntax)
                     {
-                        var VEPUUXLBAREASIWHGJFHLKEUPDNNODJSEAKFIJSHHISKTTSDLCULVLCLXSFRJWLVIKTRWQX= (IdentifierNameSyntax)WDXTTRWLVHOTTDFIRHFXVRCNCLWSOPGJQXWULOVUCDIKCTBFXWOATVHEAKQHSDUGBEDUFJUCJ.Type;
-                        var UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE= VEPUUXLBAREASIWHGJFHLKEUPDNNODJSEAKFIJSHHISKTTSDLCULVLCLXSFRJWLVIKTRWQX.Identifier.ValueText;
-                        if (BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL.Instance.TUHINNPNAKHURWVXAPNIIBSPSDTAHSJBDEVDENQUPXUWPXMLTGGOJGJRCQOKSPFGB.ContainsKey(UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE))
+                        var URPsNqvXAoBUtSugFDVgkExIFlxSUzPCafALSmvSuRSFbTvmzcwytNrQWHyUutCGQmdjRST= (IdentifierNameSyntax)IEFPeBCmfXJXQwncRplKAlGpphaWCtjQeCVyXzJyMFWAkhfOPEuOUgOPbWifQubIolvNETWqX.Type;
+                        var GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO= URPsNqvXAoBUtSugFDVgkExIFlxSUzPCafALSmvSuRSFbTvmzcwytNrQWHyUutCGQmdjRST.Identifier.ValueText;
+                        if (KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET.Instance.iddBEXbvOSqBTzlbUGAPhiQwMvvFnMLPEfnVQRoQFFsUnathlMhLrpJAULhHrknCH.ContainsKey(GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO))
                         {
-                            if (!BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL.Instance.TUHINNPNAKHURWVXAPNIIBSPSDTAHSJBDEVDENQUPXUWPXMLTGGOJGJRCQOKSPFGB[UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE].Equals(JLMSVBBREMWJRJPOCWVUUDBMDIJOWSUWQIEMAEQDUXETQXWDOXVCAHWGJAOMPLSKPXRIECNVFSXUWFTDKFAWURVJJWDAN.En_Priority.CLASS))
+                            if (!KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET.Instance.iddBEXbvOSqBTzlbUGAPhiQwMvvFnMLPEfnVQRoQFFsUnathlMhLrpJAULhHrknCH[GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO].Equals(GKqFtTINKPrntpRJhRBwOSCQbQLMRRdRvsdBlyTtvNMAgPeMDGwLmlpfHIILHcvztJClvQRJnWyAGCtojnIKlwSDBnzaVI.En_Priority.CLASS))
                             {
                                 return node;
                             }
@@ -52,24 +52,43 @@ namespace CodeObfuscation
                     }
                 }
 
-                if (RSHPGUCCXDWCGQJIIINOJJBMRDJFWMDKMCIDUEDMUMEITCFTIKJNWFNHQSVDLUDLXLNEH.Count() > 0)
+                if (fAbqvtHJrollBgiHNxqLDPqdtBLBBKCaeJIOgUwUNzHjuHFcoAQBLxtVwKcxRGHQuHQku.Count() > 0)
                 {
-                    foreach (SyntaxToken token in RSHPGUCCXDWCGQJIIINOJJBMRDJFWMDKMCIDUEDMUMEITCFTIKJNWFNHQSVDLUDLXLNEH)
+                    foreach (SyntaxToken token in fAbqvtHJrollBgiHNxqLDPqdtBLBBKCaeJIOgUwUNzHjuHFcoAQBLxtVwKcxRGHQuHQku)
                     {
                         //Console.WriteLine(token.ValueText + " *** " + token.IsKeyword());
-                        var UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE= token.ValueText;
-                        if (BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL.Instance.VANRFCWHOSAVXWTICCBHPQOVLVUXQUXDNPIFQNBOASWQAMVFKHMVJWUFJQFHFWPR.ContainsKey(UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE))
+                        var GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO= token.ValueText;
+                        if (KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET.Instance.EFsKAKSQlMkamnDfFfnREGWAAjljSliFbnxyjIWylDdyHDTdjCCmgWsboaJKRrnm.ContainsKey(GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO))
                         {
                             if (node is IdentifierNameSyntax)
                             {
-                                var JVRIQLHKRTQAGNTQRTAWOCWHBIVQFXNBLOKANTIXIVBIDFTPHDMOUETHWKHHNPESFPNPCTCVKB= (IdentifierNameSyntax)node;
-                                IdentifierNameSyntax NRAODUNGICLXFHTDBDMBJRQHCMQEMMAODTOBGIHLRHGCGGKGTWRXIJPTARMOEJRUBUUKQRVRTBH= JVRIQLHKRTQAGNTQRTAWOCWHBIVQFXNBLOKANTIXIVBIDFTPHDMOUETHWKHHNPESFPNPCTCVKB.WithIdentifier(Identifier(BLSVUOJMAXPVAKJUFLGRGCNPOIPECQSKJLMCXPFCDMBVBOBFOLUPNQXWVCHL.Instance.VANRFCWHOSAVXWTICCBHPQOVLVUXQUXDNPIFQNBOASWQAMVFKHMVJWUFJQFHFWPR[UPVXDPSAUJKBLHVUQVXFNEBVIVVBJXAFTDXTXMXUFSJHXVXOLNDUXLJQOAPGRQPVJEGIHBUE])).WithLeadingTrivia(JVRIQLHKRTQAGNTQRTAWOCWHBIVQFXNBLOKANTIXIVBIDFTPHDMOUETHWKHHNPESFPNPCTCVKB.GetLeadingTrivia()).WithTrailingTrivia(JVRIQLHKRTQAGNTQRTAWOCWHBIVQFXNBLOKANTIXIVBIDFTPHDMOUETHWKHHNPESFPNPCTCVKB.GetTrailingTrivia());
-                                return node.ReplaceNode(JVRIQLHKRTQAGNTQRTAWOCWHBIVQFXNBLOKANTIXIVBIDFTPHDMOUETHWKHHNPESFPNPCTCVKB, NRAODUNGICLXFHTDBDMBJRQHCMQEMMAODTOBGIHLRHGCGGKGTWRXIJPTARMOEJRUBUUKQRVRTBH);
+                                var NnxUFkxCTGnnwcgfFiBLWMiINSnlXKvoFkHhUclufabXnKGvIenfUNBBQsGdzBtJKQlagnRKhU= (IdentifierNameSyntax)node;
+                                IdentifierNameSyntax qfPHJDMBabLILlhGXagFdsGfNoRVIKIfnAhNsIwCqlRibBEAxowpWapgirxrdjzXhqKLCeUOIsu= NnxUFkxCTGnnwcgfFiBLWMiINSnlXKvoFkHhUclufabXnKGvIenfUNBBQsGdzBtJKQlagnRKhU.WithIdentifier(Identifier(KkvPTJdFdQdlTfiyyOzuBekNLAwCjzUhxGMFhnxFzSbbsXPeaGNoPuwpApET.Instance.EFsKAKSQlMkamnDfFfnREGWAAjljSliFbnxyjIWylDdyHDTdjCCmgWsboaJKRrnm[GGCIqshKdvxwqRdqUKagLTwgCOLhnoFiweTXwFCupvzqsCrgywQypyIduOFJXAMDjNAnnNnO])).WithLeadingTrivia(NnxUFkxCTGnnwcgfFiBLWMiINSnlXKvoFkHhUclufabXnKGvIenfUNBBQsGdzBtJKQlagnRKhU.GetLeadingTrivia()).WithTrailingTrivia(NnxUFkxCTGnnwcgfFiBLWMiINSnlXKvoFkHhUclufabXnKGvIenfUNBBQsGdzBtJKQlagnRKhU.GetTrailingTrivia());
+                                return node.ReplaceNode(NnxUFkxCTGnnwcgfFiBLWMiINSnlXKvoFkHhUclufabXnKGvIenfUNBBQsGdzBtJKQlagnRKhU, qfPHJDMBabLILlhGXagFdsGfNoRVIKIfnAhNsIwCqlRibBEAxowpWapgirxrdjzXhqKLCeUOIsu);
                             }
 
                         }
                     }
                 }
+
+               /* if (isParameter)
+                {
+                    ParameterSyntax oldNode = (ParameterSyntax)node;
+                    string name = oldNode.Identifier.ValueText;
+                    if (SharedContainer.Instance.nameMap.ContainsKey(name))
+                    {
+                        ParameterSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
+                        return node.ReplaceNode(oldNode, newNode);
+                    }
+                    else
+                    {
+                        SharedContainer.Instance.nameMap[name] = SharedContainer.Instance.RandomString(SharedContainer.Instance.nameMap.Count() + 1);
+                        SharedContainer.Instance.nameType[name] = Priority.En_Priority.VARIABLE;
+                        ParameterSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
+                        return node.ReplaceNode(oldNode, newNode);
+                    }
+                    
+                }*/
 
             }
 
