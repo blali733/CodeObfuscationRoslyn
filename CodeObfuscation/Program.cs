@@ -16,33 +16,9 @@ namespace CodeObfuscation
         static void Main(string[] args)
         {
             CompilationManager compilationManager = new CompilationManager();
-            //Priority.En_Priority[] priorityTable = { Priority.En_Priority.CLASS, Priority.En_Priority.CONSTRUCTOR, Priority.En_Priority.METHOD, Priority.En_Priority.VARIABLE, Priority.En_Priority.OCCURENCE };
-
-           Tuple<Compilation, int> compilationTuple = compilationManager.CreateCompilation();
-
-            for(int i = 0; i < compilationTuple.Item2; i++)
-            {
-                foreach (SyntaxTree sourceTree in compilationTuple.Item1.SyntaxTrees)
-                {
-                    ClassRewriter classRewriter = new ClassRewriter();
-                    SyntaxNode classRewritedNode = classRewriter.Visit(sourceTree.GetRoot());
-                    ConstructorRewriter constructorRewriter = new ConstructorRewriter();
-                    SyntaxNode constructorRewritedNode = constructorRewriter.Visit(classRewritedNode);
-                    MethodRewriter methodRewriter = new MethodRewriter();
-                    SyntaxNode methodRewritedNode = methodRewriter.Visit(constructorRewritedNode);
-                    VariableRewriter variableRewriter = new VariableRewriter();
-                    SyntaxNode variableRewritedNode = variableRewriter.Visit(methodRewritedNode);
-                    OccurrenceRewriter occurrenceRewriter = new OccurrenceRewriter();
-                    SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(variableRewritedNode);
-                    /*if (occurenceRewritedNode != sourceTree.GetRoot())
-                    {
-                        File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
-                    }*/
-                    //save without condition
-                    File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
-                }
-            }
-
+            
+            Priority.En_Priority[] priorityTable = { Priority.En_Priority.CLASS, Priority.En_Priority.CONSTRUCTOR, Priority.En_Priority.METHOD, Priority.En_Priority.VARIABLE, Priority.En_Priority.OCCURENCE };
+            compilationManager.parseCompilationWithProvidedPriorities(priorityTable);
         }
     }
 }

@@ -19,31 +19,37 @@ namespace CodeObfuscation
         public void parseCompilationWithProvidedPriorities(Priority.En_Priority[] prioritiesTablo) 
         {
             Tuple<Compilation, int> compilationTuple = CreateCompilation();
+            Array.Sort(prioritiesTablo);
 
             for (int i = 0; i < compilationTuple.Item2; i++)
             {
                 foreach (SyntaxTree sourceTree in compilationTuple.Item1.SyntaxTrees)
                 {
-                    ClassRewriter classRewriter = new ClassRewriter();
-                    SyntaxNode classRewritedNode = classRewriter.Visit(sourceTree.GetRoot());
-                    ConstructorRewriter constructorRewriter = new ConstructorRewriter();
-                    SyntaxNode constructorRewritedNode = constructorRewriter.Visit(classRewritedNode);
-                    MethodRewriter methodRewriter = new MethodRewriter();
-                    SyntaxNode methodRewritedNode = methodRewriter.Visit(constructorRewritedNode);
-                    VariableRewriter variableRewriter = new VariableRewriter();
-                    SyntaxNode variableRewritedNode = variableRewriter.Visit(methodRewritedNode);
-                    OccurrenceRewriter occurrenceRewriter = new OccurrenceRewriter();
-                    SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(variableRewritedNode);
-                    /*if (occurenceRewritedNode != sourceTree.GetRoot())
+                    SyntaxNode finalNode = null;
+                    foreach (Priority.En_Priority priority in prioritiesTablo)
                     {
-                        File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
-                    }*/
-                    //save without condition
-                    File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
+                        CSharpSyntaxRewriter rewriter = Priority.GetInstancePriorityBased(priority);
+                        if (rewriter != null)
+                        {
+                            if (finalNode == null)
+                            {
+                                finalNode = rewriter.Visit(sourceTree.GetRoot());
+                            }
+                            else
+                            {
+                                finalNode = rewriter.Visit(finalNode);
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    File.WriteAllText(sourceTree.FilePath, finalNode.ToFullString());
                 }
             }
         }
-        public Tuple<Compilation, int> CreateCompilation()
+        private Tuple<Compilation, int> CreateCompilation()
         {
 
             String programPath = @"..\..\Program.cs";
