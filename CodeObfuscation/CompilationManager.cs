@@ -45,7 +45,35 @@ namespace CodeObfuscation
             SyntaxTree occurrenceRewriterTree =
                            CSharpSyntaxTree.ParseText(occurrenceRewriterText)
                                            .WithFilePath(occurrenceRewriterDestinationPath);
-            SyntaxTree[] sourceTrees = { programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree };
+
+            String methodRewriterPath = @"..\..\MethodRewriter.cs";
+            String methodRewriterDestinationPath = @"..\..\MethodRewriterOBF.cs";
+            String methodRewriterText = File.ReadAllText(methodRewriterPath);
+            SyntaxTree methodRewriterTree =
+                           CSharpSyntaxTree.ParseText(methodRewriterText)
+                                           .WithFilePath(methodRewriterDestinationPath);
+
+            String classRewriterPath = @"..\..\ClassRewriter.cs";
+            String classRewriterDestinationPath = @"..\..\ClassRewriterOBF.cs";
+            String classRewriterText = File.ReadAllText(classRewriterPath);
+            SyntaxTree classRewriterTree =
+                           CSharpSyntaxTree.ParseText(classRewriterText)
+                                           .WithFilePath(classRewriterDestinationPath);
+
+            String constructorRewriterPath = @"..\..\ConstructorRewriter.cs";
+            String constructorRewriterDestinationPath = @"..\..\ConstructorRewriterOBF.cs";
+            String constructorRewriterText = File.ReadAllText(constructorRewriterPath);
+            SyntaxTree constructorRewriterTree =
+                           CSharpSyntaxTree.ParseText(constructorRewriterText)
+                                           .WithFilePath(constructorRewriterDestinationPath);
+
+            String variableRewriterPath = @"..\..\VariableRewriter.cs";
+            String variableRewriterDestinationPath = @"..\..\VariableRewriterOBF.cs";
+            String variableRewriterText = File.ReadAllText(variableRewriterPath);
+            SyntaxTree variableRewriterTree =
+                           CSharpSyntaxTree.ParseText(variableRewriterText)
+                                           .WithFilePath(variableRewriterDestinationPath);
+            SyntaxTree[] sourceTrees = { programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree };
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
