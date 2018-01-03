@@ -108,12 +108,12 @@ namespace CodeObfuscation
                            CSharpSyntaxTree.ParseText(variableRewriterText)
                                            .WithFilePath(variableRewriterDestinationPath);
 
-           /* String typeInferenceRewriterPath = @"..\..\TypeInferenceRewriter.cs";
+            String typeInferenceRewriterPath = @"..\..\TypeInferenceRewriter.cs";
             String typeInferenceRewriterDestinationPath = @"..\..\TypeInferenceRewriterOBF.cs";
             String typeInferenceRewriterText = File.ReadAllText(typeInferenceRewriterPath);
             SyntaxTree typeInferenceRewriterTree =
                            CSharpSyntaxTree.ParseText(typeInferenceRewriterText)
-                                           .WithFilePath(typeInferenceRewriterDestinationPath);*/
+                                           .WithFilePath(typeInferenceRewriterDestinationPath);
 
             String priorityPath = @"..\..\Priority.cs";
             String priorityDestinationPath = @"..\..\PriorityOBF.cs";
@@ -122,7 +122,7 @@ namespace CodeObfuscation
                            CSharpSyntaxTree.ParseText(priorityText)
                                            .WithFilePath(priorityDestinationPath);
 
-            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree/*, typeInferenceRewriterTree*/, priorityTree};
+            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree, typeInferenceRewriterTree, priorityTree};
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);

@@ -27,6 +27,7 @@ namespace CodeObfuscation
             else
             {
                 replaceName = SharedContainer.Instance.RandomString(SharedContainer.Instance.nameMap.Count() + 1);
+                SharedContainer.Instance.nameType[name] = Priority.En_Priority.VARIABLE;
                 SharedContainer.Instance.nameMap[name] = replaceName;
             }
 

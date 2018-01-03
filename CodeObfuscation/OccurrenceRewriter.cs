@@ -18,6 +18,39 @@ namespace CodeObfuscation
             if (node != null)
             {
                 var descendantTokens = node.DescendantTokens();
+                if (node is FieldDeclarationSyntax)
+                {
+                    FieldDeclarationSyntax declarationSyntax = (FieldDeclarationSyntax)node;
+                    if (declarationSyntax.Declaration.Type is IdentifierNameSyntax)
+                    {
+                        IdentifierNameSyntax id = (IdentifierNameSyntax)declarationSyntax.Declaration.Type;
+                        String name = id.Identifier.ValueText;
+                        if (SharedContainer.Instance.nameType.ContainsKey(name))
+                        {
+                            if (!SharedContainer.Instance.nameType[name].Equals(Priority.En_Priority.CLASS))
+                            {
+                                return node;
+                            }
+                        }
+                    }
+                }
+
+                if (node is ParameterSyntax)
+                {
+                    ParameterSyntax parameterSyntax = (ParameterSyntax)node;
+                    if (parameterSyntax.Type is IdentifierNameSyntax)
+                    {
+                        IdentifierNameSyntax id = (IdentifierNameSyntax)parameterSyntax.Type;
+                        String name = id.Identifier.ValueText;
+                        if (SharedContainer.Instance.nameType.ContainsKey(name))
+                        {
+                            if (!SharedContainer.Instance.nameType[name].Equals(Priority.En_Priority.CLASS))
+                            {
+                                return node;
+                            }
+                        }
+                    }
+                }
 
                 if (descendantTokens.Count() > 0)
                 {
