@@ -12,31 +12,31 @@ using System.IO;
 
 namespace CodeObfuscation
 {
-    class NELTLHRD    {
-        public NELTLHRD() { }
+    class BITFNJFX    {
+        public BITFNJFX() { }
 
-        public void CSDACULKM(GBSKQCQWCVQQNAQLHSCJDJMOMMGCGLHPCSIXWVSPGCQWDCDUKCVMGGQUNEWDTOPONBOTQRNJXLCBQ.En_Priority[] prioritiesTablo) 
+        public void WVUWXHTKD(OBGNINJHRGAXUHQPWBSQJHJVFILETRQNGRNSOWSWMHMWKCQXHENBATFGPJIACFMXNKQDRVAXHTEBT.En_Priority[] prioritiesTablo) 
         {
-            Tuple<Compilation, int> ELICWFCKFKX= OCSTUTAPSQ();
+            Tuple<Compilation, int> JJRUFDNSAQJ= HMCAGNLSJK();
             Array.Sort(prioritiesTablo);
 
-            for (int NLHLVEVDIBCD= 0; NLHLVEVDIBCD < ELICWFCKFKX.Item2; NLHLVEVDIBCD++)
+            for (int VMQJWTHPBBTG= 0; VMQJWTHPBBTG < JJRUFDNSAQJ.Item2; VMQJWTHPBBTG++)
             {
-                foreach (SyntaxTree sourceTree in ELICWFCKFKX.Item1.SyntaxTrees)
+                foreach (SyntaxTree sourceTree in JJRUFDNSAQJ.Item1.SyntaxTrees)
                 {
-                    SyntaxNode LVWOTQJKERPNP= null;
-                    foreach (GBSKQCQWCVQQNAQLHSCJDJMOMMGCGLHPCSIXWVSPGCQWDCDUKCVMGGQUNEWDTOPONBOTQRNJXLCBQ.En_Priority priority in prioritiesTablo)
+                    SyntaxNode CHFDNTTIKDWUO= null;
+                    foreach (OBGNINJHRGAXUHQPWBSQJHJVFILETRQNGRNSOWSWMHMWKCQXHENBATFGPJIACFMXNKQDRVAXHTEBT.En_Priority priority in prioritiesTablo)
                     {
-                        CSharpSyntaxRewriter RPFTAJFXMAOKIX= GBSKQCQWCVQQNAQLHSCJDJMOMMGCGLHPCSIXWVSPGCQWDCDUKCVMGGQUNEWDTOPONBOTQRNJXLCBQ.NKKIJPEOTJTBLJRXOTQKBICLIEQNLNSDPEXRLTKWLASQTSFHTJIQKOOEIWAFWPCFOPJGKALTJRWBOJ(priority);
-                        if (RPFTAJFXMAOKIX != null)
+                        CSharpSyntaxRewriter FBPTKMSSRJAKPI= OBGNINJHRGAXUHQPWBSQJHJVFILETRQNGRNSOWSWMHMWKCQXHENBATFGPJIACFMXNKQDRVAXHTEBT.LKDPLUPEONLLGDFORTGTNIAJNGKDNSEPDLDWFIPIVSXVEPKRSJNXVGFCKRCFKLPUIUITXHIJEVWSJC(priority, JJRUFDNSAQJ.Item1.GetSemanticModel(sourceTree));
+                        if (FBPTKMSSRJAKPI != null)
                         {
-                            if (LVWOTQJKERPNP == null)
+                            if (CHFDNTTIKDWUO == null)
                             {
-                                LVWOTQJKERPNP = RPFTAJFXMAOKIX.Visit(sourceTree.GetRoot());
+                                CHFDNTTIKDWUO = FBPTKMSSRJAKPI.Visit(sourceTree.GetRoot());
                             }
                             else
                             {
-                                LVWOTQJKERPNP = RPFTAJFXMAOKIX.Visit(LVWOTQJKERPNP);
+                                CHFDNTTIKDWUO = FBPTKMSSRJAKPI.Visit(CHFDNTTIKDWUO);
                             }
                         }
                         else
@@ -44,91 +44,98 @@ namespace CodeObfuscation
                             continue;
                         }
                     }
-                    File.WriteAllText(sourceTree.FilePath, LVWOTQJKERPNP.ToFullString());
+                    File.WriteAllText(sourceTree.FilePath, CHFDNTTIKDWUO.ToFullString());
                 }
             }
         }
-        private Tuple<Compilation, int> OCSTUTAPSQ()
+        private Tuple<Compilation, int> HMCAGNLSJK()
         {
 
-            String PDLJOBIVFXOGSUA= @"..\..\Program.cs";
-            String TTUSTENQIIQUDWVH= @"..\..\ProgramOBF.cs";
-            String ELRRGQIALHUJFEROI= File.ReadAllText(PDLJOBIVFXOGSUA);
-            SyntaxTree XRESPNSCLCBWFEWIPK=
-                           CSharpSyntaxTree.ParseText(ELRRGQIALHUJFEROI)
-                                           .WithFilePath(TTUSTENQIIQUDWVH);
+            String REDIINCOMXXAXFH= @"..\..\Program.cs";
+            String XSNTSRSPUPNAMIVF= @"..\..\ProgramOBF.cs";
+            String RVLCEHSOGMOMPUJNN= File.ReadAllText(REDIINCOMXXAXFH);
+            SyntaxTree KSPKOVOWMGRTMNFPSF=
+                           CSharpSyntaxTree.ParseText(RVLCEHSOGMOMPUJNN)
+                                           .WithFilePath(XSNTSRSPUPNAMIVF);
 
-            String TBCRCLTHMHDKDPBLEFQ= @"..\..\CompilationManager.cs";
-            String NMWWPTNHCGCVBNSVNGGO= @"..\..\CompilationManagerOBF.cs";
-            String QWIAKWAXKVRARPCWVDKVM= File.ReadAllText(TBCRCLTHMHDKDPBLEFQ);
-            SyntaxTree ERBJKCUJRLFVOAODVLRSOU=
-                           CSharpSyntaxTree.ParseText(QWIAKWAXKVRARPCWVDKVM)
-                                           .WithFilePath(NMWWPTNHCGCVBNSVNGGO);
+            String DMDDPAXNGCGAAFALBNG= @"..\..\CompilationManager.cs";
+            String TDXUEPAASRWIUVOFAKHD= @"..\..\CompilationManagerOBF.cs";
+            String PKAPMPLGMTBMQJWCDQXLP= File.ReadAllText(DMDDPAXNGCGAAFALBNG);
+            SyntaxTree XETHRJDKAXBSKPICIIMDRM=
+                           CSharpSyntaxTree.ParseText(PKAPMPLGMTBMQJWCDQXLP)
+                                           .WithFilePath(TDXUEPAASRWIUVOFAKHD);
 
-            String ENCDJLTAKTIBLFHPAUENQJL= @"..\..\SharedContainer.cs";
-            String CCPLSAPRDWHMMGGQJOQBKMMM= @"..\..\SharedContainerOBF.cs";
-            String JUFLUOBETBXARXAASBFDEQTJR= File.ReadAllText(ENCDJLTAKTIBLFHPAUENQJL);
-            SyntaxTree DSXXIAOODCWSEVNUDRKHFXKNQG=
-                           CSharpSyntaxTree.ParseText(JUFLUOBETBXARXAASBFDEQTJR)
-                                           .WithFilePath(CCPLSAPRDWHMMGGQJOQBKMMM);
+            String XQKQLWLBIKTLPFFHSFIUMTX= @"..\..\SharedContainer.cs";
+            String SFROATIKHVLFDVAVEWWPOWXX= @"..\..\SharedContainerOBF.cs";
+            String CUANGTUAEQPLRIKGAAMNDACJR= File.ReadAllText(XQKQLWLBIKTLPFFHSFIUMTX);
+            SyntaxTree HEWODJTGSLDSSDMBLAKFNETLPP=
+                           CSharpSyntaxTree.ParseText(CUANGTUAEQPLRIKGAAMNDACJR)
+                                           .WithFilePath(SFROATIKHVLFDVAVEWWPOWXX);
 
-            String JHJIRAURQUCEKBJKNVCFODQHAWJ= @"..\..\OccurrenceRewriter.cs";
-            String CLEIKHBPGETIVWKERSWGIVSJMKKQ= @"..\..\OccurrenceRewriterOBF.cs";
-            String FPBHSPSFMLQVIKCFSMEHDWXNBPAEQ= File.ReadAllText(JHJIRAURQUCEKBJKNVCFODQHAWJ);
-            SyntaxTree STXUJJPCLOGDFQFBBWWSMPXGDMGPMF=
-                           CSharpSyntaxTree.ParseText(FPBHSPSFMLQVIKCFSMEHDWXNBPAEQ)
-                                           .WithFilePath(CLEIKHBPGETIVWKERSWGIVSJMKKQ);
+            String OKJUBSPUXOWKAHUFXVHMFUXMPAP= @"..\..\OccurrenceRewriter.cs";
+            String DEDIKWMSJUVJIDWEVCBADJHEWECJ= @"..\..\OccurrenceRewriterOBF.cs";
+            String SKVEBCLPTFMLLMKJBLWJHPBJNXLSU= File.ReadAllText(OKJUBSPUXOWKAHUFXVHMFUXMPAP);
+            SyntaxTree XJFTDAXXQIGPGJQOOMPWWCLFRBCILO=
+                           CSharpSyntaxTree.ParseText(SKVEBCLPTFMLLMKJBLWJHPBJNXLSU)
+                                           .WithFilePath(DEDIKWMSJUVJIDWEVCBADJHEWECJ);
 
-            String CONMRPQBXAKDGWVEWGRLARCJDDTQRUC= @"..\..\MethodRewriter.cs";
-            String XOFLPNQWNIAWVHJIBIXOAVBFIMEJOUAI= @"..\..\MethodRewriterOBF.cs";
-            String CWKNAKFOFHECATECRSSIRGCCMADDJHIRI= File.ReadAllText(CONMRPQBXAKDGWVEWGRLARCJDDTQRUC);
-            SyntaxTree PUXUUIPDIIQRXFNIBPUBPOUTIAXHCEWXLR=
-                           CSharpSyntaxTree.ParseText(CWKNAKFOFHECATECRSSIRGCCMADDJHIRI)
-                                           .WithFilePath(XOFLPNQWNIAWVHJIBIXOAVBFIMEJOUAI);
+            String COQSUUGPILLKICQRBGJTXKUTWUWXCBV= @"..\..\MethodRewriter.cs";
+            String PLCFPWLMUHWEDLMRINAXUWPPPSVUXVGN= @"..\..\MethodRewriterOBF.cs";
+            String GNUWGVBSORNLBFRHKDNKBCBQTLOUBONWB= File.ReadAllText(COQSUUGPILLKICQRBGJTXKUTWUWXCBV);
+            SyntaxTree IWNPNKLMFJCIDNJBNKTIULEMDDTGERXDPK=
+                           CSharpSyntaxTree.ParseText(GNUWGVBSORNLBFRHKDNKBCBQTLOUBONWB)
+                                           .WithFilePath(PLCFPWLMUHWEDLMRINAXUWPPPSVUXVGN);
 
-            String IWEFVJDFJVJINTNSHQLPQBADLUIIADKRGFU= @"..\..\ClassRewriter.cs";
-            String PDUSKWKEWKALERIVGLTAGVBRABSEFLPCHWWO= @"..\..\ClassRewriterOBF.cs";
-            String LVARGUBQLIDOQGDFKFNRCDRJDGXLTVDFSRKIK= File.ReadAllText(IWEFVJDFJVJINTNSHQLPQBADLUIIADKRGFU);
-            SyntaxTree CSKUIFPVEMWHJQCJFMHEPNXVOVOFWUWUSSIKDV=
-                           CSharpSyntaxTree.ParseText(LVARGUBQLIDOQGDFKFNRCDRJDGXLTVDFSRKIK)
-                                           .WithFilePath(PDUSKWKEWKALERIVGLTAGVBRABSEFLPCHWWO);
+            String QHDPUQBWUQWHPVETLESNFVRBMKOEHLJWRRV= @"..\..\ClassRewriter.cs";
+            String CVVNCGWPLNTLWCIGTJBFTOCDKCVOIGXOWXCV= @"..\..\ClassRewriterOBF.cs";
+            String NOPHGFFLQWQCXFONPLCLTSDAIHGENENXAKQES= File.ReadAllText(QHDPUQBWUQWHPVETLESNFVRBMKOEHLJWRRV);
+            SyntaxTree RWNIOLLJTODQKXLUOCTLOWWXBWLJRBMNJTVMND=
+                           CSharpSyntaxTree.ParseText(NOPHGFFLQWQCXFONPLCLTSDAIHGENENXAKQES)
+                                           .WithFilePath(CVVNCGWPLNTLWCIGTJBFTOCDKCVOIGXOWXCV);
 
-            String SVBLXRAEJFBUNFCDTMSMFKPKXINCMPHQFHRJDDO= @"..\..\ConstructorRewriter.cs";
-            String GUJMJEBGRSOXTPOPIGOMPEWPSVIOGLQAPWMQUVFG= @"..\..\ConstructorRewriterOBF.cs";
-            String VBTIVPMAOQJDMPWCWRSLTLXGBOHVDWTKAIPNIOSCJ= File.ReadAllText(SVBLXRAEJFBUNFCDTMSMFKPKXINCMPHQFHRJDDO);
-            SyntaxTree IXNBNLAXJSCDSLKBNGHHOUQVXCEXJRIXPCKLKEMCHW=
-                           CSharpSyntaxTree.ParseText(VBTIVPMAOQJDMPWCWRSLTLXGBOHVDWTKAIPNIOSCJ)
-                                           .WithFilePath(GUJMJEBGRSOXTPOPIGOMPEWPSVIOGLQAPWMQUVFG);
+            String EGQPNRDMCFBCKIVRDTXNHQXBQRCOGPBWHKVMSXJ= @"..\..\ConstructorRewriter.cs";
+            String FUMTFHPPEPQQCMXUMHPXUONFLEDSXKIXDKSRSURR= @"..\..\ConstructorRewriterOBF.cs";
+            String ACWWOXXKHOIEDANPGHHBEUPRGRMQSFCQNVWRPPOME= File.ReadAllText(EGQPNRDMCFBCKIVRDTXNHQXBQRCOGPBWHKVMSXJ);
+            SyntaxTree RLJBETCVCKKMPMEKFPVKGPBMQPFCTXPQTULJGPCVKT=
+                           CSharpSyntaxTree.ParseText(ACWWOXXKHOIEDANPGHHBEUPRGRMQSFCQNVWRPPOME)
+                                           .WithFilePath(FUMTFHPPEPQQCMXUMHPXUONFLEDSXKIXDKSRSURR);
 
-            String REQHGVFLTHLSSLHQCKHANQKCLPAWPISEAPDMEQTHSVW= @"..\..\VariableRewriter.cs";
-            String AMVHXDRBBTGJBROTPUGTKMGSDISMKPAGPRJOOHBSWHRJ= @"..\..\VariableRewriterOBF.cs";
-            String SGBSNUEKLBMLFCEPJEOJTARIIXEHTLVCTVAUGXWOLNSNE= File.ReadAllText(REQHGVFLTHLSSLHQCKHANQKCLPAWPISEAPDMEQTHSVW);
-            SyntaxTree VJLDJJSQHOSNRKOPUPAEJQHCHJJFAWFFDDKOREJCCKLHFH=
-                           CSharpSyntaxTree.ParseText(SGBSNUEKLBMLFCEPJEOJTARIIXEHTLVCTVAUGXWOLNSNE)
-                                           .WithFilePath(AMVHXDRBBTGJBROTPUGTKMGSDISMKPAGPRJOOHBSWHRJ);
+            String PSPDWJSHKXRCWBJUJNOABDTRRSBSDNMAALAGUMQUIMM= @"..\..\VariableRewriter.cs";
+            String QXQWKAKFNGJRMXVKDIXDVKQCLBCAUUSQNODSATOSRHXR= @"..\..\VariableRewriterOBF.cs";
+            String ORLHWCNMIIPFGOLJVJIRMREVUDJHREKNLXLRNTBSGGHFX= File.ReadAllText(PSPDWJSHKXRCWBJUJNOABDTRRSBSDNMAALAGUMQUIMM);
+            SyntaxTree VLKIFUHWFEUNNKTRGSEWBRHCSTCIOLGKWWWQXXLHCOGSOE=
+                           CSharpSyntaxTree.ParseText(ORLHWCNMIIPFGOLJVJIRMREVUDJHREKNLXLRNTBSGGHFX)
+                                           .WithFilePath(QXQWKAKFNGJRMXVKDIXDVKQCLBCAUUSQNODSATOSRHXR);
 
-            String MNIWOWSJSFBITAANPIIMKNXXWQFWBXEAVAUTUBIHLRIFNII= @"..\..\Priority.cs";
-            String IBNSDWRVWNJAVQTHTAALTEEQOABBQESKNIUUMEBCDCVGLBKO= @"..\..\PriorityOBF.cs";
-            String PKNEMUMEVVECUQFRTWKNTXTOXWIRGVEMOLJFPNVQUQWPAWFLV= File.ReadAllText(MNIWOWSJSFBITAANPIIMKNXXWQFWBXEAVAUTUBIHLRIFNII);
-            SyntaxTree ELMOUSPPWFOMTWXQPMJGXCFBSRDADOARUTCKQVRQRNQHHDBSXW=
-                           CSharpSyntaxTree.ParseText(PKNEMUMEVVECUQFRTWKNTXTOXWIRGVEMOLJFPNVQUQWPAWFLV)
-                                           .WithFilePath(IBNSDWRVWNJAVQTHTAALTEEQOABBQESKNIUUMEBCDCVGLBKO);
+           /* String typeInferenceRewriterPath = @"..\..\TypeInferenceRewriter.cs";
+            String typeInferenceRewriterDestinationPath = @"..\..\TypeInferenceRewriterOBF.cs";
+            String typeInferenceRewriterText = File.ReadAllText(typeInferenceRewriterPath);
+            SyntaxTree typeInferenceRewriterTree =
+                           CSharpSyntaxTree.ParseText(typeInferenceRewriterText)
+                                           .WithFilePath(typeInferenceRewriterDestinationPath);*/
 
-            SyntaxTree[] IKTFVBFLUDOPLIFUQXTMXSSQMJJVROQIBFFNWPVAFFAOBCCICLL= {XRESPNSCLCBWFEWIPK, ERBJKCUJRLFVOAODVLRSOU, DSXXIAOODCWSEVNUDRKHFXKNQG, STXUJJPCLOGDFQFBBWWSMPXGDMGPMF, PUXUUIPDIIQRXFNIBPUBPOUTIAXHCEWXLR, CSKUIFPVEMWHJQCJFMHEPNXVOVOFWUWUSSIKDV, IXNBNLAXJSCDSLKBNGHHOUQVXCEXJRIXPCKLKEMCHW, VJLDJJSQHOSNRKOPUPAEJQHCHJJFAWFFDDKOREJCCKLHFH, ELMOUSPPWFOMTWXQPMJGXCFBSRDADOARUTCKQVRQRNQHHDBSXW};
+            String XIGAALCHVEEHOKSXISVKOPLDSGHUTLLMMNURCNKTHPASLPI= @"..\..\Priority.cs";
+            String BNDGLVENHUCGREFLKQPTAOAVSICCWPQPCWGHQFXPIXMVXHQP= @"..\..\PriorityOBF.cs";
+            String BEOCTUIKMGLDSBPQELETWWTEQALACDVLPLBSAOTFNTSJRUUGI= File.ReadAllText(XIGAALCHVEEHOKSXISVKOPLDSGHUTLLMMNURCNKTHPASLPI);
+            SyntaxTree TRMCVRDIJJTJHIJIAMGXUQNPWFCDKLUDEQGKJISSVKOFATGKJA=
+                           CSharpSyntaxTree.ParseText(BEOCTUIKMGLDSBPQELETWWTEQALACDVLPLBSAOTFNTSJRUUGI)
+                                           .WithFilePath(BNDGLVENHUCGREFLKQPTAOAVSICCWPQPCWGHQFXPIXMVXHQP);
 
-            MetadataReference BWKXOQCQMQHRGLFNGCQWBBTHSRDOJHBTGCOKOFPUTWJIVLSDTMTF=
+            SyntaxTree[] QHNGLDDUDPOXWWMPFPCXXQSMBKBIPDXQSJSMOVEDGMECEWLQQJO= {KSPKOVOWMGRTMNFPSF, XETHRJDKAXBSKPICIIMDRM, HEWODJTGSLDSSDMBLAKFNETLPP, XJFTDAXXQIGPGJQOOMPWWCLFRBCILO, IWNPNKLMFJCIDNJBNKTIULEMDDTGERXDPK, RWNIOLLJTODQKXLUOCTLOWWXBWLJRBMNJTVMND, RLJBETCVCKKMPMEKFPVKGPBMQPFCTXPQTULJGPCVKT, VLKIFUHWFEUNNKTRGSEWBRHCSTCIOLGKWWWQXXLHCOGSOE/*, typeInferenceRewriterTree*/, TRMCVRDIJJTJHIJIAMGXUQNPWFCDKLUDEQGKJISSVKOFATGKJA};
+
+            MetadataReference PHJBANBEABTFAQVENDABIKXQLLPIDXJPFMIIJIRXMQEBKGDKGRWM=
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
-            MetadataReference JMKXDCEUMLGEPLKEUTWALTDCQKKHXATULTJRQPHMBSIHPFRJAOHAO=
+            MetadataReference QHFEIQNNVQBBQDXMHMTEKBMPGVGEIFCJAUXVGDXQSEBUOCJGGPCRV=
                     MetadataReference.CreateFromFile(typeof(SyntaxTree).Assembly.Location);
-            MetadataReference TSOJHHQQVVMQJQTBQLEMKWQLTKKRAGJRSGQATIIHOTEUUOGMVHHCCL=
+            MetadataReference SCOTOWLKIFQOPBTECFEMDKFXQBDLXVQDIMGRICQFMFJXJFXBNCEKWE=
                    MetadataReference.CreateFromFile(typeof(CSharpSyntaxTree).Assembly.Location);
-            MetadataReference[] DUCDOUUWQOMSWCXTGICVVPSTOEEWUQWGOHDUWPSLLQCOIBQDNBBXXFN= { BWKXOQCQMQHRGLFNGCQWBBTHSRDOJHBTGCOKOFPUTWJIVLSDTMTF, JMKXDCEUMLGEPLKEUTWALTDCQKKHXATULTJRQPHMBSIHPFRJAOHAO, TSOJHHQQVVMQJQTBQLEMKWQLTKKRAGJRSGQATIIHOTEUUOGMVHHCCL };
+            MetadataReference[] SHVPDMTXLKMMGDSBTXMWAVAGOKBBWURGEDRWURWDKMSWKUXUGLHEWXE= { PHJBANBEABTFAQVENDABIKXQLLPIDXJPFMIIJIRXMQEBKGDKGRWM, QHFEIQNNVQBBQDXMHMTEKBMPGVGEIFCJAUXVGDXQSEBUOCJGGPCRV, SCOTOWLKIFQOPBTECFEMDKFXQBDLXVQDIMGRICQFMFJXJFXBNCEKWE };
 
             return Tuple.Create(CSharpCompilation.Create("CodeObfuscation",
-                                            IKTFVBFLUDOPLIFUQXTMXSSQMJJVROQIBFFNWPVAFFAOBCCICLL,
-                                            DUCDOUUWQOMSWCXTGICVVPSTOEEWUQWGOHDUWPSLLQCOIBQDNBBXXFN,
+                                            QHNGLDDUDPOXWWMPFPCXXQSMBKBIPDXQSJSMOVEDGMECEWLQQJO,
+                                            SHVPDMTXLKMMGDSBTXMWAVAGOKBBWURGEDRWURWDKMSWKUXUGLHEWXE,
                                             new CSharpCompilationOptions(
-                                                    OutputKind.ConsoleApplication)) as Compilation, IKTFVBFLUDOPLIFUQXTMXSSQMJJVROQIBFFNWPVAFFAOBCCICLL.Count());
+                                                    OutputKind.ConsoleApplication)) as Compilation, QHNGLDDUDPOXWWMPFPCXXQSMBKBIPDXQSJSMOVEDGMECEWLQQJO.Count());
         }
     }
 }

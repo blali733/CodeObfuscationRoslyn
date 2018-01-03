@@ -19,6 +19,7 @@ namespace CodeObfuscation
         {
             String name = node.Identifier.ValueText;
             String replaceName = "";
+
             if (SharedContainer.Instance.nameMap.ContainsKey(name))
             {
                 replaceName = SharedContainer.Instance.nameMap[name];

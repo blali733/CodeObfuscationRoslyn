@@ -17,7 +17,7 @@ namespace CodeObfuscation
         {
             CompilationManager compilationManager = new CompilationManager();
             
-            Priority.En_Priority[] priorityTable = { Priority.En_Priority.CLASS, Priority.En_Priority.CONSTRUCTOR, Priority.En_Priority.METHOD, Priority.En_Priority.VARIABLE, Priority.En_Priority.OCCURENCE };
+            Priority.En_Priority[] priorityTable = { Priority.En_Priority.CLASS, Priority.En_Priority.CONSTRUCTOR, Priority.En_Priority.METHOD, Priority.En_Priority.VARIABLE, Priority.En_Priority.OCCURENCE/*, Priority.En_Priority.TYPE_INFERENCE */};
             compilationManager.parseCompilationWithProvidedPriorities(priorityTable);
         }
     }

@@ -17,11 +17,6 @@ namespace CodeObfuscation
 
         public MethodRewriter() { }
 
-        /*public override SyntaxNode VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
-        {
-            return base.VisitConstructorDeclaration(node);
-        }*/
-
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
             String name = node.Identifier.ValueText;

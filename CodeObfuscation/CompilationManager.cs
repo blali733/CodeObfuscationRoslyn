@@ -28,7 +28,7 @@ namespace CodeObfuscation
                     SyntaxNode finalNode = null;
                     foreach (Priority.En_Priority priority in prioritiesTablo)
                     {
-                        CSharpSyntaxRewriter rewriter = Priority.GetInstancePriorityBased(priority);
+                        CSharpSyntaxRewriter rewriter = Priority.GetInstancePriorityBased(priority, compilationTuple.Item1.GetSemanticModel(sourceTree));
                         if (rewriter != null)
                         {
                             if (finalNode == null)
@@ -108,6 +108,13 @@ namespace CodeObfuscation
                            CSharpSyntaxTree.ParseText(variableRewriterText)
                                            .WithFilePath(variableRewriterDestinationPath);
 
+           /* String typeInferenceRewriterPath = @"..\..\TypeInferenceRewriter.cs";
+            String typeInferenceRewriterDestinationPath = @"..\..\TypeInferenceRewriterOBF.cs";
+            String typeInferenceRewriterText = File.ReadAllText(typeInferenceRewriterPath);
+            SyntaxTree typeInferenceRewriterTree =
+                           CSharpSyntaxTree.ParseText(typeInferenceRewriterText)
+                                           .WithFilePath(typeInferenceRewriterDestinationPath);*/
+
             String priorityPath = @"..\..\Priority.cs";
             String priorityDestinationPath = @"..\..\PriorityOBF.cs";
             String priorityText = File.ReadAllText(priorityPath);
@@ -115,7 +122,7 @@ namespace CodeObfuscation
                            CSharpSyntaxTree.ParseText(priorityText)
                                            .WithFilePath(priorityDestinationPath);
 
-            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree, priorityTree};
+            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree/*, typeInferenceRewriterTree*/, priorityTree};
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);

@@ -12,13 +12,15 @@ namespace CodeObfuscation
     {
         public enum En_Priority: int
         {
-            CLASS = 0, CONSTRUCTOR, METHOD, VARIABLE, OCCURENCE, NOT_DEFINED
+            TYPE_INFERENCE = 0, CLASS, CONSTRUCTOR, METHOD, VARIABLE, OCCURENCE, NOT_DEFINED
         }
 
-        public static CSharpSyntaxRewriter GetInstancePriorityBased(En_Priority priority)
+        public static CSharpSyntaxRewriter GetInstancePriorityBased(En_Priority priority, SemanticModel model)
         {
             switch (priority)
             {
+                case En_Priority.TYPE_INFERENCE:
+                    return new TypeInferenceRewriter(model);
                 case En_Priority.CLASS:
                     return new ClassRewriter();
                 case En_Priority.CONSTRUCTOR:
@@ -29,7 +31,9 @@ namespace CodeObfuscation
                     return new VariableRewriter();
                 case En_Priority.OCCURENCE:
                     return new OccurrenceRewriter();
+                
             }
+
             return null;
         }
     }
