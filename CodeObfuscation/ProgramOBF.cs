@@ -11,7 +11,7 @@ using System.IO;
 
 namespace CodeObfuscation
 {
-    class HKMDV    {
+    class DJW$Q    {
         static void Main(string[] args)
         {
             CompilationManager compilationManager = new CompilationManager();
@@ -19,24 +19,18 @@ namespace CodeObfuscation
 
             foreach (SyntaxTree sourceTree in compilation.SyntaxTrees)
             {
-                /*SemanticModel model = test.GetSemanticModel(sourceTree);
-                NameRewriter nameRewriter = new NameRewriter(model);
-                SyntaxNode nameNode = nameRewriter.Visit(sourceTree.GetRoot());
-                TypeInferenceRewriter typeInferenceRewriter = new TypeInferenceRewriter(model);
-                SyntaxNode inferenceNode = typeInferenceRewriter.Visit(nameNode);
-                if (inferenceNode != sourceTree.GetRoot())
-                {
-                    File.WriteAllText(sourceTree.FilePath, inferenceNode.ToFullString());
-                }*/
-
                 ClassRewriter classRewriter = new ClassRewriter();
                 SyntaxNode classRewritedNode = classRewriter.Visit(sourceTree.GetRoot());
+                MethodRewriter methodRewriter = new MethodRewriter();
+                SyntaxNode methodRewritedNode = methodRewriter.Visit(classRewritedNode);
                 OccurrenceRewriter occurrenceRewriter = new OccurrenceRewriter();
-                SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(classRewritedNode);
-                if (occurenceRewritedNode != sourceTree.GetRoot())
+                SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(methodRewritedNode);
+                /*if (occurenceRewritedNode != sourceTree.GetRoot())
                 {
                     File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
-                }
+                }*/
+                //save without condition
+                File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
             }
         }
     }

@@ -10,9 +10,10 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeObfuscation
 {
-    class ClassRewriter: CSharpSyntaxRewriter
+    class ClassRewriter : CSharpSyntaxRewriter
     {
         public ClassRewriter() { }
+
         public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             String name = node.Identifier.ValueText;

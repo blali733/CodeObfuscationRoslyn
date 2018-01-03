@@ -39,7 +39,13 @@ namespace CodeObfuscation
                            CSharpSyntaxTree.ParseText(sharedContainterText)
                                            .WithFilePath(sharedContainterDestinationPath);
 
-            SyntaxTree[] sourceTrees = { programTree, compilationManagerTree, sharedContainterTree };
+            String occurrenceRewriterPath = @"..\..\OccurrenceRewriter.cs";
+            String occurrenceRewriterDestinationPath = @"..\..\OccurrenceRewriterOBF.cs";
+            String occurrenceRewriterText = File.ReadAllText(occurrenceRewriterPath);
+            SyntaxTree occurrenceRewriterTree =
+                           CSharpSyntaxTree.ParseText(occurrenceRewriterText)
+                                           .WithFilePath(occurrenceRewriterDestinationPath);
+            SyntaxTree[] sourceTrees = { programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree };
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);

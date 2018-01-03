@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="ClassRewriter.cs" />
     <Compile Include="CompilationManager.cs" />
+    <Compile Include="MethodRewriter.cs" />
     <Compile Include="OccurrenceRewriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

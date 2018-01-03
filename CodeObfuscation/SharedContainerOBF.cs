@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CodeObfuscation
 {
-    class TUEWUMV    {
-        private static readonly TUEWUMV instance = new TUEWUMV();
+    class BD#@@$XX    {
+        private static readonly BD#@@$XX instance = new BD#@@$XX();
         private Random random = new Random();
         public Dictionary<string, string> nameMap = new Dictionary<string, string>();
         private SharedContainer() { }
-        public static TUEWUMV Instance
+        public static BD#@@$XX Instance
         {
             get
             {
@@ -19,7 +19,7 @@ namespace CodeObfuscation
             }
         }
 
-        public string RandomString(int length)
+        public string #TSEXLDH#(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWX!@#$";
             string randomString = new string(Enumerable.Repeat(chars, length + 4)
@@ -28,7 +28,7 @@ namespace CodeObfuscation
             {
                 if (value.Equals(randomString))
                 {
-                    return RandomString(length);
+                    return #TSEXLDH#(length);
                 }
             }
             return randomString;
