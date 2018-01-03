@@ -21,6 +21,7 @@ namespace CodeObfuscation
         {
             return base.VisitConstructorDeclaration(node);
         }*/
+
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
             String name = node.Identifier.ValueText;

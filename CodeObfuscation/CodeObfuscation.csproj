@@ -79,11 +79,13 @@
   <ItemGroup>
     <Compile Include="ClassRewriter.cs" />
     <Compile Include="CompilationManager.cs" />
+    <Compile Include="ConstructorRewriter.cs" />
     <Compile Include="MethodRewriter.cs" />
     <Compile Include="OccurrenceRewriter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedContainer.cs" />
+    <Compile Include="VariableRewriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

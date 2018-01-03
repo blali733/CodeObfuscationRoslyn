@@ -12,51 +12,51 @@ using System.IO;
 
 namespace CodeObfuscation
 {
-    class U$MRVR    {
-        public CompilationManager() { }
-        public Compilation X@OANDI()
+    class KLJSRPOLQTIVLGVNWC    {
+        public KLJSRPOLQTIVLGVNWC() { }
+        public Compilation CFMKGGNJHCIWQJELCOP()
         {
 
-            String programPath = @"..\..\Program.cs";
-            String destinationProgramPath = @"..\..\ProgramOBF.cs";
-            String programText = File.ReadAllText(programPath);
-            SyntaxTree programTree =
-                           CSharpSyntaxTree.ParseText(programText)
-                                           .WithFilePath(destinationProgramPath);
+            String KXUWXVDGFXHUUHWTMPXE= @"..\..\Program.cs";
+            String CFHHLDSCWRADGWMCGHNND= @"..\..\ProgramOBF.cs";
+            String AHJXGLOSOQUCJMEQNKTDAH= File.ReadAllText(KXUWXVDGFXHUUHWTMPXE);
+            SyntaxTree MXENVSTNFBJBBWWHFPDHHAE=
+                           CSharpSyntaxTree.ParseText(AHJXGLOSOQUCJMEQNKTDAH)
+                                           .WithFilePath(CFHHLDSCWRADGWMCGHNND);
 
-            String compilationManagerPath = @"..\..\CompilationManager.cs";
-            String compilationManagerDestinationPath = @"..\..\CompilationManagerOBF.cs";
-            String compilationManagerText = File.ReadAllText(compilationManagerPath);
-            SyntaxTree compilationManagerTree =
-                           CSharpSyntaxTree.ParseText(compilationManagerText)
-                                           .WithFilePath(compilationManagerDestinationPath);
+            String AUKIKQURKCQSJTQOTXALSRIK= @"..\..\CompilationManager.cs";
+            String FRFFDXRAMTDQLKIUIHXWJDMMM= @"..\..\CompilationManagerOBF.cs";
+            String BHIHNKHMXCQLONKJQGOPACJODC= File.ReadAllText(AUKIKQURKCQSJTQOTXALSRIK);
+            SyntaxTree KRKBBFQRCQJQWJUELHQIRSMNQVV=
+                           CSharpSyntaxTree.ParseText(BHIHNKHMXCQLONKJQGOPACJODC)
+                                           .WithFilePath(FRFFDXRAMTDQLKIUIHXWJDMMM);
 
-            String sharedContainterPath = @"..\..\SharedContainer.cs";
-            String sharedContainterDestinationPath = @"..\..\SharedContainerOBF.cs";
-            String sharedContainterText = File.ReadAllText(sharedContainterPath);
-            SyntaxTree sharedContainterTree =
-                           CSharpSyntaxTree.ParseText(sharedContainterText)
-                                           .WithFilePath(sharedContainterDestinationPath);
+            String UMWVRDKXNBWALTVLRAXHETTPBWTI= @"..\..\SharedContainer.cs";
+            String QEVIEHTFDSPNMJGCMGENUGSMQNQBQ= @"..\..\SharedContainerOBF.cs";
+            String HTTICHIENUDXQHXJKTTMQCTRFMJKIQ= File.ReadAllText(UMWVRDKXNBWALTVLRAXHETTPBWTI);
+            SyntaxTree OORMUXTFJCVWXKBNDWTDFSVMXEACCNV=
+                           CSharpSyntaxTree.ParseText(HTTICHIENUDXQHXJKTTMQCTRFMJKIQ)
+                                           .WithFilePath(QEVIEHTFDSPNMJGCMGENUGSMQNQBQ);
 
-            String occurrenceRewriterPath = @"..\..\OccurrenceRewriter.cs";
-            String occurrenceRewriterDestinationPath = @"..\..\OccurrenceRewriterOBF.cs";
-            String occurrenceRewriterText = File.ReadAllText(occurrenceRewriterPath);
-            SyntaxTree occurrenceRewriterTree =
-                           CSharpSyntaxTree.ParseText(occurrenceRewriterText)
-                                           .WithFilePath(occurrenceRewriterDestinationPath);
-            SyntaxTree[] sourceTrees = { programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree };
+            String WUVGMFEKXNFJROSDJPQIKOEKUQEMQWRC= @"..\..\OccurrenceRewriter.cs";
+            String TEXBBDMHXMTOAIEWFBPKKFLIPKJTAPSBT= @"..\..\OccurrenceRewriterOBF.cs";
+            String CNMPQBFDIJWSOJLMGHPHHQOROKORQGHSSS= File.ReadAllText(WUVGMFEKXNFJROSDJPQIKOEKUQEMQWRC);
+            SyntaxTree WSPGMXJGCTMOABWHSIDRMKWTAGKLKBBEXUL=
+                           CSharpSyntaxTree.ParseText(CNMPQBFDIJWSOJLMGHPHHQOROKORQGHSSS)
+                                           .WithFilePath(TEXBBDMHXMTOAIEWFBPKKFLIPKJTAPSBT);
+            SyntaxTree[] RUXSPVAOSEAKNTJMXOAFLTTGGNWUASIODNEK= { MXENVSTNFBJBBWWHFPDHHAE, KRKBBFQRCQJQWJUELHQIRSMNQVV, OORMUXTFJCVWXKBNDWTDFSVMXEACCNV, WSPGMXJGCTMOABWHSIDRMKWTAGKLKBBEXUL };
 
-            MetadataReference mscorlib =
+            MetadataReference SOMUMTDPXUUPBMCNWOAVBRLBWDNAUKGAOXSIC=
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
-            MetadataReference codeAnalysis =
+            MetadataReference ERPPEGKQGTLQSPNNHJACKVIGDTNNUACSRKSVIF=
                     MetadataReference.CreateFromFile(typeof(SyntaxTree).Assembly.Location);
-            MetadataReference csharpCodeAnalysis =
+            MetadataReference ULBIPIBIBSRLHNRGQGJJMJQUUGRRWIUPFBMNBBF=
                    MetadataReference.CreateFromFile(typeof(CSharpSyntaxTree).Assembly.Location);
-            MetadataReference[] references = { mscorlib, codeAnalysis, csharpCodeAnalysis };
+            MetadataReference[] XETRTUIRMAKSMMWRLSELJPIJRVBGGBDFOAJFQPVX= { SOMUMTDPXUUPBMCNWOAVBRLBWDNAUKGAOXSIC, ERPPEGKQGTLQSPNNHJACKVIGDTNNUACSRKSVIF, ULBIPIBIBSRLHNRGQGJJMJQUUGRRWIUPFBMNBBF };
 
             return CSharpCompilation.Create("CodeObfuscation",
-                                            sourceTrees,
-                                            references,
+                                            RUXSPVAOSEAKNTJMXOAFLTTGGNWUASIODNEK,
+                                            XETRTUIRMAKSMMWRLSELJPIJRVBGGBDFOAJFQPVX,
                                             new CSharpCompilationOptions(
                                                     OutputKind.ConsoleApplication));
         }

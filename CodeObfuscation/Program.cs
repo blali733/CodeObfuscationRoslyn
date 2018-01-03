@@ -22,10 +22,14 @@ namespace CodeObfuscation
             {
                 ClassRewriter classRewriter = new ClassRewriter();
                 SyntaxNode classRewritedNode = classRewriter.Visit(sourceTree.GetRoot());
+                ConstructorRewriter constructorRewriter = new ConstructorRewriter();
+                SyntaxNode constructorRewritedNode = constructorRewriter.Visit(classRewritedNode);
                 MethodRewriter methodRewriter = new MethodRewriter();
-                SyntaxNode methodRewritedNode = methodRewriter.Visit(classRewritedNode);
+                SyntaxNode methodRewritedNode = methodRewriter.Visit(constructorRewritedNode);
+                VariableRewriter variableRewriter = new VariableRewriter();
+                SyntaxNode variableRewritedNode = variableRewriter.Visit(methodRewritedNode);
                 OccurrenceRewriter occurrenceRewriter = new OccurrenceRewriter();
-                SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(methodRewritedNode);
+                SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(variableRewritedNode);
                 /*if (occurenceRewritedNode != sourceTree.GetRoot())
                 {
                     File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());

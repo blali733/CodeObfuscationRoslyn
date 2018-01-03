@@ -6,32 +6,32 @@ using System.Threading.Tasks;
 
 namespace CodeObfuscation
 {
-    class BD#@@$XX    {
-        private static readonly BD#@@$XX instance = new BD#@@$XX();
-        private Random random = new Random();
-        public Dictionary<string, string> nameMap = new Dictionary<string, string>();
-        private SharedContainer() { }
-        public static BD#@@$XX Instance
+    class MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN    {
+        private static readonly MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN CHRFUANSPVOQRWKPTJQKFBGRQPHHNHGKILVFNACPBEH= new MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN();
+        private Random GWFOXPVPDDQCBBXMEQGEHOEHFAEBTGAIARATKBIPQQDG= new Random();
+        public Dictionary<string, string> PITENLVXSAAPSWIWLTUUCHCIAEBDIOLOLVQUFALHJBOAR= new Dictionary<string, string>();
+        private MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN() { }
+        public static MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN Instance
         {
             get
             {
-                return instance;
+                return CHRFUANSPVOQRWKPTJQKFBGRQPHHNHGKILVFNACPBEH;
             }
         }
 
-        public string #TSEXLDH#(int length)
+        public string WXWAIIAEAJGOAEJCSTGKTANHFWPOXXDMWIVCMKMUCI(int length)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWX!@#$";
-            string randomString = new string(Enumerable.Repeat(chars, length + 4)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-            foreach(string value in nameMap.Values)
+            const string JAMQKEVUHDHGLEJJSPDMJDUFMRLHMLBRCPPDNKVKOSESIO= "ABCDEFGHIJKLMNOPQRSTUVWX";
+            string RTCWOKKLHFDHERROHUCODUMFUHRRWOXCUVXPEOUOHOHKAGG= new string(Enumerable.Repeat(JAMQKEVUHDHGLEJJSPDMJDUFMRLHMLBRCPPDNKVKOSESIO, length + 4)
+              .Select(s => s[GWFOXPVPDDQCBBXMEQGEHOEHFAEBTGAIARATKBIPQQDG.Next(s.Length)]).ToArray());
+            foreach(string value in PITENLVXSAAPSWIWLTUUCHCIAEBDIOLOLVQUFALHJBOAR.Values)
             {
-                if (value.Equals(randomString))
+                if (value.Equals(RTCWOKKLHFDHERROHUCODUMFUHRRWOXCUVXPEOUOHOHKAGG))
                 {
-                    return #TSEXLDH#(length);
+                    return WXWAIIAEAJGOAEJCSTGKTANHFWPOXXDMWIVCMKMUCI(length);
                 }
             }
-            return randomString;
+            return RTCWOKKLHFDHERROHUCODUMFUHRRWOXCUVXPEOUOHOHKAGG;
         }
     }
 }

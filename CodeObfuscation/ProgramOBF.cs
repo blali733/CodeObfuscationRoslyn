@@ -11,26 +11,30 @@ using System.IO;
 
 namespace CodeObfuscation
 {
-    class DJW$Q    {
+    class GBWEK    {
         static void Main(string[] args)
         {
-            CompilationManager compilationManager = new CompilationManager();
-            Compilation compilation = compilationManager.CreateCompilation();
+            CompilationManager DRTLDO= new CompilationManager();
+            Compilation SUFSVJU= DRTLDO.CreateCompilation();
 
-            foreach (SyntaxTree sourceTree in compilation.SyntaxTrees)
+            foreach (SyntaxTree sourceTree in SUFSVJU.SyntaxTrees)
             {
-                ClassRewriter classRewriter = new ClassRewriter();
-                SyntaxNode classRewritedNode = classRewriter.Visit(sourceTree.GetRoot());
-                MethodRewriter methodRewriter = new MethodRewriter();
-                SyntaxNode methodRewritedNode = methodRewriter.Visit(classRewritedNode);
-                OccurrenceRewriter occurrenceRewriter = new OccurrenceRewriter();
-                SyntaxNode occurenceRewritedNode = occurrenceRewriter.Visit(methodRewritedNode);
+                ClassRewriter BSTNVFPD= new ClassRewriter();
+                SyntaxNode NWGWFFWUK= BSTNVFPD.Visit(sourceTree.GetRoot());
+                ConstructorRewriter KECTBAJCOF= new ConstructorRewriter();
+                SyntaxNode ASTVUCQRRJQ= KECTBAJCOF.Visit(NWGWFFWUK);
+                MethodRewriter EQMGOSNNWJUX= new MethodRewriter();
+                SyntaxNode THQHBXRJLHXPI= EQMGOSNNWJUX.Visit(ASTVUCQRRJQ);
+                VariableRewriter RAJTNLEKRGLONL= new VariableRewriter();
+                SyntaxNode GUMQUDSXODTPRAA= RAJTNLEKRGLONL.Visit(THQHBXRJLHXPI);
+                OccurrenceRewriter FVQVVUSERIWPMCAF= new OccurrenceRewriter();
+                SyntaxNode QMMLNWODLNRKFAWRE= FVQVVUSERIWPMCAF.Visit(GUMQUDSXODTPRAA);
                 /*if (occurenceRewritedNode != sourceTree.GetRoot())
                 {
                     File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
                 }*/
                 //save without condition
-                File.WriteAllText(sourceTree.FilePath, occurenceRewritedNode.ToFullString());
+                File.WriteAllText(sourceTree.FilePath, QMMLNWODLNRKFAWRE.ToFullString());
             }
         }
     }

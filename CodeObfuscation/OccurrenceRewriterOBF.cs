@@ -10,28 +10,28 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeObfuscation
 {
-    class !$FGEXBO#G: CSharpSyntaxRewriter
+    class ERALIPSKVHUCGQRNQFAKGRBJQXLHMMCFNBMXWDPLCKBIHMOW: CSharpSyntaxRewriter
     {
-        public OccurrenceRewriter() { }
+        public ERALIPSKVHUCGQRNQFAKGRBJQXLHMMCFNBMXWDPLCKBIHMOW() { }
         public override SyntaxNode Visit(SyntaxNode node)
         {
             if (node != null)
             {
-                var descendantTokens = node.DescendantTokens();
+                var NBOEXTAKPOSIELWJEPMFERONNNITQRBEINRLVVFSABHHIGGOM= node.DescendantTokens();
 
-                if (descendantTokens.Count() > 0)
+                if (NBOEXTAKPOSIELWJEPMFERONNNITQRBEINRLVVFSABHHIGGOM.Count() > 0)
                 {
-                    foreach (SyntaxToken token in descendantTokens)
+                    foreach (SyntaxToken token in NBOEXTAKPOSIELWJEPMFERONNNITQRBEINRLVVFSABHHIGGOM)
                     {
                         //Console.WriteLine(token.ValueText + " *** " + token.IsKeyword());
-                        string name = token.ValueText;
-                        if (BD#@@$XX.Instance.nameMap.ContainsKey(name))
+                        string PDQAIRTKBOKLESVNOAORLMGJSEDKHEHGRHBOIEATVATGTGUHKR= token.ValueText;
+                        if (MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN.Instance.PITENLVXSAAPSWIWLTUUCHCIAEBDIOLOLVQUFALHJBOAR.ContainsKey(PDQAIRTKBOKLESVNOAORLMGJSEDKHEHGRHBOIEATVATGTGUHKR))
                         {
                             if (node is IdentifierNameSyntax)
                             {
-                                IdentifierNameSyntax oldNode = (IdentifierNameSyntax)node;
-                                IdentifierNameSyntax newNode = oldNode.WithIdentifier(Identifier(BD#@@$XX.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
-                                return node.ReplaceNode(oldNode, newNode);
+                                IdentifierNameSyntax SGPVBDVGFEOJDUHDRVRHEJXTUKQXNLHTANJAOUFVRCWUFLVXXQM= (IdentifierNameSyntax)node;
+                                IdentifierNameSyntax XOCMJGUAOLVRSUSJNLHMVPTOCKDNINRAVWIFVBARRTOKTJEXKCHM= SGPVBDVGFEOJDUHDRVRHEJXTUKQXNLHTANJAOUFVRCWUFLVXXQM.WithIdentifier(Identifier(MNFQMOIDGHBTUOUITKAVTCKKVFDMDRATUEXUJQVCN.Instance.PITENLVXSAAPSWIWLTUUCHCIAEBDIOLOLVQUFALHJBOAR[PDQAIRTKBOKLESVNOAORLMGJSEDKHEHGRHBOIEATVATGTGUHKR])).WithLeadingTrivia(SGPVBDVGFEOJDUHDRVRHEJXTUKQXNLHTANJAOUFVRCWUFLVXXQM.GetLeadingTrivia()).WithTrailingTrivia(SGPVBDVGFEOJDUHDRVRHEJXTUKQXNLHTANJAOUFVRCWUFLVXXQM.GetTrailingTrivia());
+                                return node.ReplaceNode(SGPVBDVGFEOJDUHDRVRHEJXTUKQXNLHTANJAOUFVRCWUFLVXXQM, XOCMJGUAOLVRSUSJNLHMVPTOCKDNINRAVWIFVBARRTOKTJEXKCHM);
                             }
 
                         }
