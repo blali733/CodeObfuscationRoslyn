@@ -50,15 +50,16 @@ namespace CodeObfuscation
         {
             List<SyntaxTree> sourceTrees = new List<SyntaxTree>();
             SharedContainer instance = SharedContainer.Instance;
+            System.IO.Directory.CreateDirectory(instance.outputPath);
             string[] allfiles = System.IO.Directory.GetFiles(instance.path, "*.*", System.IO.SearchOption.AllDirectories);
             foreach (var file in allfiles)
             {
                 FileInfo info = new FileInfo(file);
-                if(info.Extension == "cs")
+                if(info.Extension == ".cs")
                 {
-                    String programPath = info.FullName;
-                    String destinationProgramPath = info.FullName;
-                    String path
+                    String programPath = null;
+                    String destinationProgramPath = null;
+                    String path;
                     switch (instance.mode)
                     {
                         case 1: // In-place
@@ -66,7 +67,7 @@ namespace CodeObfuscation
                             destinationProgramPath = info.FullName;
                             break;
                         case 2: // Random names + different dir
-                            path = Path.Combine(instance.outputPath, info.Name + ".cs");
+                            path = Path.Combine(instance.outputPath, info.Name);
                             File.Copy(info.FullName, path);
                             programPath = path;
                             destinationProgramPath = path;
@@ -82,6 +83,7 @@ namespace CodeObfuscation
                     SyntaxTree programTree =
                                    CSharpSyntaxTree.ParseText(programText)
                                                    .WithFilePath(destinationProgramPath);
+                    sourceTrees.Add(programTree);
                 }
             }
 
