@@ -11,11 +11,11 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeObfuscation
 {
-    class VariableRewriter: CSharpSyntaxRewriter
+    class ParameterRewriter : CSharpSyntaxRewriter
     {
-        public VariableRewriter() { }
+        public ParameterRewriter() { }
 
-        public override SyntaxNode VisitVariableDeclarator(VariableDeclaratorSyntax node)
+        public override SyntaxNode VisitParameter(ParameterSyntax node)
         {
             String name = node.Identifier.ValueText;
             String replaceName = "";
@@ -30,7 +30,7 @@ namespace CodeObfuscation
                 SharedContainer.Instance.nameMap[name] = replaceName;
             }
 
-            VariableDeclaratorSyntax newSyntax = node.WithIdentifier(Identifier(replaceName)).WithLeadingTrivia(node.GetLeadingTrivia()).WithTrailingTrivia(node.GetTrailingTrivia());
+            ParameterSyntax newSyntax = node.WithIdentifier(Identifier(replaceName)).WithLeadingTrivia(node.GetLeadingTrivia()).WithTrailingTrivia(node.GetTrailingTrivia());
             return node.ReplaceNode(node, newSyntax);
         }
     }

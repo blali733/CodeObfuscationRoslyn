@@ -25,12 +25,9 @@ namespace CodeObfuscation
                     {
                         IdentifierNameSyntax id = (IdentifierNameSyntax)declarationSyntax.Declaration.Type;
                         String name = id.Identifier.ValueText;
-                        if (SharedContainer.Instance.nameType.ContainsKey(name))
+                        if (!SharedContainer.Instance.nameType.ContainsKey(name))
                         {
-                            if (!SharedContainer.Instance.nameType[name].Equals(Priority.En_Priority.CLASS))
-                            {
                                 return node;
-                            }
                         }
                     }
                 }
@@ -42,12 +39,9 @@ namespace CodeObfuscation
                     {
                         IdentifierNameSyntax id = (IdentifierNameSyntax)parameterSyntax.Type;
                         String name = id.Identifier.ValueText;
-                        if (SharedContainer.Instance.nameType.ContainsKey(name))
+                        if (!SharedContainer.Instance.nameType.ContainsKey(name))
                         {
-                            if (!SharedContainer.Instance.nameType[name].Equals(Priority.En_Priority.CLASS))
-                            {
-                                return node;
-                            }
+                            return node;
                         }
                     }
                 }
@@ -56,7 +50,6 @@ namespace CodeObfuscation
                 {
                     foreach (SyntaxToken token in descendantTokens)
                     {
-                        //Console.WriteLine(token.ValueText + " *** " + token.IsKeyword());
                         string name = token.ValueText;
                         if (SharedContainer.Instance.nameMap.ContainsKey(name))
                         {
@@ -70,25 +63,6 @@ namespace CodeObfuscation
                         }
                     }
                 }
-
-               /* if (isParameter)
-                {
-                    ParameterSyntax oldNode = (ParameterSyntax)node;
-                    string name = oldNode.Identifier.ValueText;
-                    if (SharedContainer.Instance.nameMap.ContainsKey(name))
-                    {
-                        ParameterSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
-                        return node.ReplaceNode(oldNode, newNode);
-                    }
-                    else
-                    {
-                        SharedContainer.Instance.nameMap[name] = SharedContainer.Instance.RandomString(SharedContainer.Instance.nameMap.Count() + 1);
-                        SharedContainer.Instance.nameType[name] = Priority.En_Priority.VARIABLE;
-                        ParameterSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
-                        return node.ReplaceNode(oldNode, newNode);
-                    }
-                    
-                }*/
 
             }
 

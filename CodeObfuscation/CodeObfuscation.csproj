@@ -80,6 +80,8 @@
     <Compile Include="ClassRewriter.cs" />
     <Compile Include="CompilationManager.cs" />
     <Compile Include="ConstructorRewriter.cs" />
+    <Compile Include="EnumRewriter.cs" />
+    <Compile Include="ParameterRewriter.cs" />
     <Compile Include="Priority.cs" />
     <Compile Include="MethodRewriter.cs" />
     <Compile Include="OccurrenceRewriter.cs" />
