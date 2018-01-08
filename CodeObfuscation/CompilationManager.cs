@@ -55,7 +55,8 @@ namespace CodeObfuscation
             foreach (var file in allfiles)
             {
                 FileInfo info = new FileInfo(file);
-                if(info.Extension == ".cs")
+                // ACHTUNG - Hacky "if" ahead!
+                if(info.Extension == ".cs" && !info.Name.Contains("OBF") && !info.Name.Contains("TemporaryGeneratedFile_") && !info.Name.Contains("AssemblyInfo"))
                 {
                     String programPath = null;
                     String destinationProgramPath = null;
@@ -67,13 +68,13 @@ namespace CodeObfuscation
                             destinationProgramPath = info.FullName;
                             break;
                         case 2: // Random names + different dir
-                            path = Path.Combine(instance.outputPath, info.Name);
+                            path = Path.Combine(instance.outputPath, instance.RandomFileName() + ".cs");
                             File.Copy(info.FullName, path);
                             programPath = path;
                             destinationProgramPath = path;
                             break;
                         case 3: // Different dir only
-                            path = Path.Combine(instance.outputPath,instance.RandomFileName()+".cs");
+                            path = Path.Combine(instance.outputPath, info.Name);
                             File.Copy(info.FullName, path);
                             programPath = path;
                             destinationProgramPath = path;
