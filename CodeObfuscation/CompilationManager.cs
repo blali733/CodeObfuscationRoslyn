@@ -48,92 +48,42 @@ namespace CodeObfuscation
         }
         private Tuple<Compilation, int> CreateCompilation()
         {
-
-            String programPath = @"..\..\Program.cs";
-            String destinationProgramPath = @"..\..\Program.cs";
-            String programText = File.ReadAllText(programPath);
-            SyntaxTree programTree =
-                           CSharpSyntaxTree.ParseText(programText)
-                                           .WithFilePath(destinationProgramPath);
-
-            String compilationManagerPath = @"..\..\CompilationManager.cs";
-            String compilationManagerDestinationPath = @"..\..\CompilationManager.cs";
-            String compilationManagerText = File.ReadAllText(compilationManagerPath);
-            SyntaxTree compilationManagerTree =
-                           CSharpSyntaxTree.ParseText(compilationManagerText)
-                                           .WithFilePath(compilationManagerDestinationPath);
-
-            String sharedContainterPath = @"..\..\SharedContainer.cs";
-            String sharedContainterDestinationPath = @"..\..\SharedContainer.cs";
-            String sharedContainterText = File.ReadAllText(sharedContainterPath);
-            SyntaxTree sharedContainterTree =
-                           CSharpSyntaxTree.ParseText(sharedContainterText)
-                                           .WithFilePath(sharedContainterDestinationPath);
-
-            String occurrenceRewriterPath = @"..\..\OccurrenceRewriter.cs";
-            String occurrenceRewriterDestinationPath = @"..\..\OccurrenceRewriter.cs";
-            String occurrenceRewriterText = File.ReadAllText(occurrenceRewriterPath);
-            SyntaxTree occurrenceRewriterTree =
-                           CSharpSyntaxTree.ParseText(occurrenceRewriterText)
-                                           .WithFilePath(occurrenceRewriterDestinationPath);
-
-            String methodRewriterPath = @"..\..\MethodRewriter.cs";
-            String methodRewriterDestinationPath = @"..\..\MethodRewriter.cs";
-            String methodRewriterText = File.ReadAllText(methodRewriterPath);
-            SyntaxTree methodRewriterTree =
-                           CSharpSyntaxTree.ParseText(methodRewriterText)
-                                           .WithFilePath(methodRewriterDestinationPath);
-
-            String classRewriterPath = @"..\..\ClassRewriter.cs";
-            String classRewriterDestinationPath = @"..\..\ClassRewriter.cs";
-            String classRewriterText = File.ReadAllText(classRewriterPath);
-            SyntaxTree classRewriterTree =
-                           CSharpSyntaxTree.ParseText(classRewriterText)
-                                           .WithFilePath(classRewriterDestinationPath);
-
-            String constructorRewriterPath = @"..\..\ConstructorRewriter.cs";
-            String constructorRewriterDestinationPath = @"..\..\ConstructorRewriter.cs";
-            String constructorRewriterText = File.ReadAllText(constructorRewriterPath);
-            SyntaxTree constructorRewriterTree =
-                           CSharpSyntaxTree.ParseText(constructorRewriterText)
-                                           .WithFilePath(constructorRewriterDestinationPath);
-
-            String variableRewriterPath = @"..\..\VariableRewriter.cs";
-            String variableRewriterDestinationPath = @"..\..\VariableRewriter.cs";
-            String variableRewriterText = File.ReadAllText(variableRewriterPath);
-            SyntaxTree variableRewriterTree =
-                           CSharpSyntaxTree.ParseText(variableRewriterText)
-                                           .WithFilePath(variableRewriterDestinationPath);
-
-            String typeInferenceRewriterPath = @"..\..\TypeInferenceRewriter.cs";
-            String typeInferenceRewriterDestinationPath = @"..\..\TypeInferenceRewriter.cs";
-            String typeInferenceRewriterText = File.ReadAllText(typeInferenceRewriterPath);
-            SyntaxTree typeInferenceRewriterTree =
-                           CSharpSyntaxTree.ParseText(typeInferenceRewriterText)
-                                           .WithFilePath(typeInferenceRewriterDestinationPath);
-
-            String priorityPath = @"..\..\Priority.cs";
-            String priorityDestinationPath = @"..\..\Priority.cs";
-            String priorityText = File.ReadAllText(priorityPath);
-            SyntaxTree priorityTree =
-                           CSharpSyntaxTree.ParseText(priorityText)
-                                           .WithFilePath(priorityDestinationPath);
-
-            String parameterRewriterPath = @"..\..\ParameterRewriter.cs";
-            String parameterRewriterDestinationPath = @"..\..\ParameterRewriter.cs";
-            String parameterRewriterText = File.ReadAllText(parameterRewriterPath);
-            SyntaxTree parameterRewriterTree =
-                           CSharpSyntaxTree.ParseText(parameterRewriterText)
-                                           .WithFilePath(parameterRewriterDestinationPath);
-
-            String enumRewriterPath = @"..\..\EnumRewriter.cs";
-            String enumRewriterDestinationPath = @"..\..\EnumRewriter.cs";
-            String enumRewriterText = File.ReadAllText(enumRewriterPath);
-            SyntaxTree enumRewriterTree =
-                           CSharpSyntaxTree.ParseText(enumRewriterText)
-                                           .WithFilePath(enumRewriterDestinationPath);
-
-            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree, typeInferenceRewriterTree, priorityTree, parameterRewriterTree, enumRewriterTree};
+            List<SyntaxTree> sourceTrees = new List<SyntaxTree>();
+            SharedContainer instance = SharedContainer.Instance;
+            string[] allfiles = System.IO.Directory.GetFiles(instance.path, "*.*", System.IO.SearchOption.AllDirectories);
+            foreach (var file in allfiles)
+            {
+                FileInfo info = new FileInfo(file);
+                if(info.Extension == "cs")
+                {
+                    String programPath = info.FullName;
+                    String destinationProgramPath = info.FullName;
+                    String path
+                    switch (instance.mode)
+                    {
+                        case 1: // In-place
+                            programPath = info.FullName;
+                            destinationProgramPath = info.FullName;
+                            break;
+                        case 2: // Random names + different dir
+                            path = Path.Combine(instance.outputPath, info.Name + ".cs");
+                            File.Copy(info.FullName, path);
+                            programPath = path;
+                            destinationProgramPath = path;
+                            break;
+                        case 3: // Different dir only
+                            path = Path.Combine(instance.outputPath,instance.RandomFileName()+".cs");
+                            File.Copy(info.FullName, path);
+                            programPath = path;
+                            destinationProgramPath = path;
+                            break;
+                    }
+                    String programText = File.ReadAllText(programPath);
+                    SyntaxTree programTree =
+                                   CSharpSyntaxTree.ParseText(programText)
+                                                   .WithFilePath(destinationProgramPath);
+                }
+            }
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
@@ -144,7 +94,7 @@ namespace CodeObfuscation
             MetadataReference[] references = { mscorlib, codeAnalysis, csharpCodeAnalysis };
 
             return Tuple.Create(CSharpCompilation.Create("CodeObfuscation",
-                                            sourceTrees,
+                                            sourceTrees.ToArray(),
                                             references,
                                             new CSharpCompilationOptions(
                                                     OutputKind.ConsoleApplication)) as Compilation, sourceTrees.Count());
