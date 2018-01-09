@@ -23,7 +23,7 @@ namespace CodeObfuscation
             Boolean exceptionFlag = false;
             foreach (SyntaxToken modifier in node.Modifiers)
             {
-                if (modifier.ValueText.Equals(kModifierExclusion))
+                if (modifier.ValueText.Equals(kModifierExclusion) && !SharedContainer.Instance.nameMap.ContainsKey(name))
                 {
                     exceptionFlag = true;
                     break;

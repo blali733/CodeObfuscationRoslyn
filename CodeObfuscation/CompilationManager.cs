@@ -133,7 +133,14 @@ namespace CodeObfuscation
                            CSharpSyntaxTree.ParseText(enumRewriterText)
                                            .WithFilePath(enumRewriterDestinationPath);
 
-            SyntaxTree[] sourceTrees = {programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree, typeInferenceRewriterTree, priorityTree, parameterRewriterTree, enumRewriterTree};
+            String abstractTestPath = @"..\..\AbstractTest.cs";
+            String abstractTestDestinationPath = @"..\..\AbstractTest.cs";
+            String abstractTestText = File.ReadAllText(abstractTestPath);
+            SyntaxTree abstractTestTree =
+                           CSharpSyntaxTree.ParseText(abstractTestText)
+                                           .WithFilePath(abstractTestDestinationPath);
+
+            SyntaxTree[] sourceTrees = {abstractTestTree, programTree, compilationManagerTree, sharedContainterTree, occurrenceRewriterTree, methodRewriterTree, classRewriterTree, constructorRewriterTree, variableRewriterTree, typeInferenceRewriterTree, priorityTree, parameterRewriterTree, enumRewriterTree};
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);

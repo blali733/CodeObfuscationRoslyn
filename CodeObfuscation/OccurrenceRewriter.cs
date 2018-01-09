@@ -66,7 +66,7 @@ namespace CodeObfuscation
                     if (SharedContainer.Instance.nameMap.ContainsKey(name))
                     {
                         ForEachStatementSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name] + " "));
-                        return Visit(node.ReplaceNode(oldNode, newNode));
+                        return base.Visit(node.ReplaceNode(oldNode, newNode));
                     }
 
                 }
