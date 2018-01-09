@@ -12,7 +12,7 @@ namespace CodeObfuscation
     {
         public enum En_Priority: int
         {
-            TYPE_INFERENCE = 0, CLASS, ENUM, CONSTRUCTOR, METHOD, VARIABLE, PARAMETER, OCCURENCE, NOT_DEFINED
+            TYPE_INFERENCE = 0, CLASS, ENUM, CONSTRUCTOR, METHOD, PARAMETER, VARIABLE, OCCURENCE, NOT_DEFINED
         }
 
         public static CSharpSyntaxRewriter GetInstancePriorityBased(En_Priority priority, SemanticModel model)

@@ -10,14 +10,13 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeObfuscation
 {
-    class OccurrenceRewriter: CSharpSyntaxRewriter
+    class OccurrenceRewriter : CSharpSyntaxRewriter
     {
         public OccurrenceRewriter() { }
         public override SyntaxNode Visit(SyntaxNode node)
         {
             if (node != null)
             {
-                var descendantTokens = node.DescendantTokens();
                 if (node is FieldDeclarationSyntax)
                 {
                     FieldDeclarationSyntax declarationSyntax = (FieldDeclarationSyntax)node;
@@ -27,7 +26,9 @@ namespace CodeObfuscation
                         String name = id.Identifier.ValueText;
                         if (!SharedContainer.Instance.nameType.ContainsKey(name))
                         {
-                                return node;
+
+                            return node;
+
                         }
                     }
                 }
@@ -46,26 +47,31 @@ namespace CodeObfuscation
                     }
                 }
 
-                if (descendantTokens.Count() > 0)
+                if (node is IdentifierNameSyntax)
                 {
-                    foreach (SyntaxToken token in descendantTokens)
+                    IdentifierNameSyntax oldNode = (IdentifierNameSyntax)node;
+                    string name = oldNode.Identifier.ValueText;
+                    if (SharedContainer.Instance.nameMap.ContainsKey(name))
                     {
-                        string name = token.ValueText;
-                        if (SharedContainer.Instance.nameMap.ContainsKey(name))
-                        {
-                            if (node is IdentifierNameSyntax)
-                            {
-                                IdentifierNameSyntax oldNode = (IdentifierNameSyntax)node;
-                                IdentifierNameSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
-                                return node.ReplaceNode(oldNode, newNode);
-                            }
-
-                        }
+                        IdentifierNameSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name])).WithLeadingTrivia(oldNode.GetLeadingTrivia()).WithTrailingTrivia(oldNode.GetTrailingTrivia());
+                        return node.ReplaceNode(oldNode, newNode);
                     }
+
                 }
 
-            }
+                if (node is ForEachStatementSyntax)
+                {
+                    ForEachStatementSyntax oldNode = (ForEachStatementSyntax)node;
+                    string name = oldNode.Identifier.ValueText;
+                    if (SharedContainer.Instance.nameMap.ContainsKey(name))
+                    {
+                        ForEachStatementSyntax newNode = oldNode.WithIdentifier(Identifier(SharedContainer.Instance.nameMap[name] + " "));
+                        return Visit(node.ReplaceNode(oldNode, newNode));
+                    }
 
+                }
+                return base.Visit(node);
+            }
             return base.Visit(node);
         }
     }
