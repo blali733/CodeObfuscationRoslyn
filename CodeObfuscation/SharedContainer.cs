@@ -43,7 +43,7 @@ namespace CodeObfuscation
             return randomString;
         }
 
-        public string RandomFileName()  //TODO: actually check if result is unique
+        public string RandomFileName()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXqwertyuiopasdfghjklzxcvbnm";
             string randomString;
