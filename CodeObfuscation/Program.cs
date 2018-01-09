@@ -15,10 +15,10 @@ namespace CodeObfuscation
     {
         static void Main(string[] args)
         {
-            String path = null;
-            String mode = null;
+            string path = null;
+            string mode = null;
             bool randomNames = false;
-            String outputPath = null;
+            string outputPath = null;
             int iMode = 1;
 
             Console.WriteLine("Please provide project path:");

@@ -46,8 +46,8 @@ namespace CodeObfuscation
                 }
             }
         }
-        private Tuple<Compilation, int> CreateCompilation()
-        {
+
+        private List<SyntaxTree> CreateSyntaxTrees() {
             List<SyntaxTree> sourceTrees = new List<SyntaxTree>();
             SharedContainer instance = SharedContainer.Instance;
             System.IO.Directory.CreateDirectory(instance.outputPath);
@@ -56,11 +56,11 @@ namespace CodeObfuscation
             {
                 FileInfo info = new FileInfo(file);
                 // ACHTUNG - Hacky "if" ahead!
-                if(info.Extension == ".cs" && !info.Name.Contains("OBF") && !info.Name.Contains("TemporaryGeneratedFile_") && !info.Name.Contains("AssemblyInfo"))
+                if (info.Extension == ".cs" && !info.Name.Contains("OBF") && !info.Name.Contains("TemporaryGeneratedFile_") && !info.Name.Contains("AssemblyInfo"))
                 {
-                    String programPath = null;
-                    String destinationProgramPath = null;
-                    String path;
+                    string programPath = null;
+                    string destinationProgramPath = null;
+                    string path;
                     switch (instance.mode)
                     {
                         case 1: // In-place
@@ -80,13 +80,25 @@ namespace CodeObfuscation
                             destinationProgramPath = path;
                             break;
                     }
-                    String programText = File.ReadAllText(programPath);
+                    string programText = File.ReadAllText(programPath);
                     SyntaxTree programTree =
                                    CSharpSyntaxTree.ParseText(programText)
                                                    .WithFilePath(destinationProgramPath);
                     sourceTrees.Add(programTree);
                 }
             }
+            return sourceTrees;
+        }
+        private Tuple<Compilation, int> CreateCompilation()
+        {
+            List<SyntaxTree> sourceTrees = new List<SyntaxTree>();
+            SharedContainer instance = SharedContainer.Instance;
+            
+            if(instance.sourceTrees == null)
+            {
+                instance.sourceTrees = CreateSyntaxTrees();
+            }
+            sourceTrees = instance.sourceTrees;
 
             MetadataReference mscorlib =
                     MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
