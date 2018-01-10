@@ -35,8 +35,9 @@ namespace CodeObfuscation
             string randomString;
             do
             {
-                randomString = new string(Enumerable.Repeat(chars, 25/*length + 4*/)
-                  .Select(s => s[random.Next(s.Length)]).ToArray());
+                //randomString = new string(Enumerable.Repeat(chars, 25/*length + 4*/)
+                //  .Select(s => s[random.Next(s.Length)]).ToArray());
+                randomString = "u" + Guid.NewGuid().ToString().Replace('-', 'u');
                 foreach (string value in nameMap.Values)
                 {
                     if (value.Equals(randomString))
@@ -45,7 +46,7 @@ namespace CodeObfuscation
                         fuse++;
                     }
                 }
-            } while (fuse == 0);
+            } while (fuse != 0);
             return randomString;
         }
 
