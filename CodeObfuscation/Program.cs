@@ -38,7 +38,7 @@ namespace CodeObfuscation
                 case "2":
                     iMode = 2;
                     randomNames = true;
-                    Console.WriteLine("Please provide output direcory path:");
+                    Console.WriteLine("Please provide output directory path:");
                     do
                     {
                         outputPath = Console.ReadLine();
@@ -46,7 +46,7 @@ namespace CodeObfuscation
                 break;
                 case "3":
                     iMode = 3;
-                    Console.WriteLine("Please provide output direcory path:");
+                    Console.WriteLine("Please provide output directory path:");
                     do
                     {
                         outputPath = Console.ReadLine();
