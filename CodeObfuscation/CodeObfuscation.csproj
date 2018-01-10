@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="AbstractTest.cs" />
     <Compile Include="ClassRewriter.cs" />
+    <Compile Include="CommentRemover.cs" />
     <Compile Include="CompilationManager.cs" />
     <Compile Include="ConstructorRewriter.cs" />
     <Compile Include="EnumRewriter.cs" />

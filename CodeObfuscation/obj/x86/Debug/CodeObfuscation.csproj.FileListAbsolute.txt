@@ -28,3 +28,33 @@ c:\users\aleksander olszewski\source\repos\CodeObfuscation\CodeObfuscation\obj\x
 c:\users\aleksander olszewski\source\repos\CodeObfuscation\CodeObfuscation\obj\x86\Debug\CodeObfuscation.csproj.CoreCompileInputs.cache
 c:\users\aleksander olszewski\source\repos\CodeObfuscation\CodeObfuscation\obj\x86\Debug\CodeObfuscation.exe
 c:\users\aleksander olszewski\source\repos\CodeObfuscation\CodeObfuscation\obj\x86\Debug\CodeObfuscation.pdb
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\CodeObfuscation.exe
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\CodeObfuscation.pdb
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Collections.Immutable.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.AttributedModel.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.Convention.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.Hosting.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.Runtime.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.TypedParts.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Collections.Immutable.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.AttributedModel.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.Convention.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.Hosting.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.Runtime.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Composition.TypedParts.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\obj\x86\Debug\CodeObfuscation.csprojResolveAssemblyReference.cache
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\obj\x86\Debug\CodeObfuscation.csproj.CoreCompileInputs.cache
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\obj\x86\Debug\CodeObfuscation.exe
+C:\Users\blali733\source\repos\CodeObfucationRoslyn\CodeObfuscation\obj\x86\Debug\CodeObfuscation.pdb
