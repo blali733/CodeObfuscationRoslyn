@@ -31,29 +31,35 @@ namespace CodeObfuscation
         public string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXqwertyuiopasdfghjklzxcvbnm";
-            string randomString = new string(Enumerable.Repeat(chars, length + 4)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-            foreach(string value in nameMap.Values)
+            int fuse = 0;
+            string randomString;
+            do
             {
-                if (value.Equals(randomString))
+                randomString = new string(Enumerable.Repeat(chars, 25/*length + 4*/)
+                  .Select(s => s[random.Next(s.Length)]).ToArray());
+                foreach (string value in nameMap.Values)
                 {
-                    return RandomString(length);
+                    if (value.Equals(randomString))
+                    {
+                        //return RandomString(length);
+                        fuse++;
+                    }
                 }
-            }
+            } while (fuse == 0);
             return randomString;
         }
 
         public string RandomFileName()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXqwertyuiopasdfghjklzxcvbnm";
-            string randomString;
+            string randomFileName;
             do
             {
-                randomString = new string(Enumerable.Repeat(chars, 15)
+                randomFileName = new string(Enumerable.Repeat(chars, 15)
                     .Select(s => s[random.Next(s.Length)]).ToArray());
-            } while (files.Contains(randomString));
-            files.Add(randomString);
-            return randomString;
+            } while (files.Contains(randomFileName));
+            files.Add(randomFileName);
+            return randomFileName;
         }
     }
 }
