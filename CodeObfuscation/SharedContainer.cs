@@ -30,19 +30,15 @@ namespace CodeObfuscation
 
         public string RandomString(int length)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXqwertyuiopasdfghjklzxcvbnm";
             int fuse = 0;
             string randomString;
             do
             {
-                //randomString = new string(Enumerable.Repeat(chars, 25/*length + 4*/)
-                //  .Select(s => s[random.Next(s.Length)]).ToArray());
                 randomString = "u" + Guid.NewGuid().ToString().Replace('-', 'u');
                 foreach (string value in nameMap.Values)
                 {
                     if (value.Equals(randomString))
                     {
-                        //return RandomString(length);
                         fuse++;
                     }
                 }
