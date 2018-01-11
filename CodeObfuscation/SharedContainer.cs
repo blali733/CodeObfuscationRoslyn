@@ -31,10 +31,11 @@ namespace CodeObfuscation
 
         public string RandomString(int length)
         {
-            int fuse = 0;
+            int fuse;
             string randomString;
             do
             {
+                fuse = 0;
                 randomString = "u" + Guid.NewGuid().ToString().Replace('-', 'u');
                 foreach (string value in nameMap.Values)
                 {
