@@ -66,18 +66,21 @@ namespace CodeObfuscation
                         case 1: // In-place
                             programPath = info.FullName;
                             destinationProgramPath = info.FullName;
+                            instance.filePaths.Add(info.FullName);
                             break;
                         case 2: // Random names + different dir
                             path = Path.Combine(instance.outputPath, instance.RandomFileName() + ".cs");
                             File.Copy(info.FullName, path);
                             programPath = path;
                             destinationProgramPath = path;
+                            instance.filePaths.Add(path);
                             break;
                         case 3: // Different dir only
                             path = Path.Combine(instance.outputPath, info.Name);
                             File.Copy(info.FullName, path);
                             programPath = path;
                             destinationProgramPath = path;
+                            instance.filePaths.Add(path);
                             break;
                     }
                     string programText = File.ReadAllText(programPath);
@@ -94,23 +97,13 @@ namespace CodeObfuscation
         {
             List<SyntaxTree> sourceTrees = new List<SyntaxTree>();
             SharedContainer instance = SharedContainer.Instance;
-            string[] allfiles = System.IO.Directory.GetFiles(instance.outputPath, "*.*", System.IO.SearchOption.AllDirectories);
-            foreach (var file in allfiles)
+            foreach (string file in instance.filePaths)
             {
-                FileInfo info = new FileInfo(file);
-                // ACHTUNG - Hacky "if" ahead!
-                if (info.Extension == ".cs" && !info.Name.Contains("TemporaryGeneratedFile_") && !info.Name.Contains("AssemblyInfo"))
-                {
-                    string programPath = null;
-                    string destinationProgramPath = null;
-                    programPath = info.FullName;
-                    destinationProgramPath = info.FullName;
-                    string programText = File.ReadAllText(programPath);
-                    SyntaxTree programTree =
-                                   CSharpSyntaxTree.ParseText(programText)
-                                                   .WithFilePath(destinationProgramPath);
-                    sourceTrees.Add(programTree);
-                }
+                string programText = File.ReadAllText(file);
+                SyntaxTree programTree =
+                               CSharpSyntaxTree.ParseText(programText)
+                                               .WithFilePath(file);
+                sourceTrees.Add(programTree);
             }
             return sourceTrees;
         }

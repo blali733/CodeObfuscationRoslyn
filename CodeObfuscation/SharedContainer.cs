@@ -12,6 +12,7 @@ namespace CodeObfuscation
         private static readonly SharedContainer instance = new SharedContainer();
         private Random random = new Random();
         private List<string> files = new List<string>();
+        public List<string> filePaths = new List<string>();
         public string path;
         public string outputPath;
         public bool generalizeNames;
